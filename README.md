@@ -1,8 +1,6 @@
 # *Basp-A2022*/ TrackGenix
 ![enter image description here](https://raw.githubusercontent.com/CristianBucci/BaSP-A2022-Etapa-1/2a065bc7d2b47b5e2ff9c1c40d69a00809193fea/Semana-02/assets/img/trackgenix.png)
 ## Table of contents
-- [*Basp-A2022*/ TrackGenix](#basp-a2022-trackgenix)
-  - [Table of contents](#table-of-contents)
   - [General info](#general-info)
   - [About US](#about-us)
   - [What We Do?](#what-we-do)
