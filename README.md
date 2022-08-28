@@ -1,4 +1,4 @@
-# *Basp-A2022*/ TrackGenix 🚀
+# *BaSP-A2022*/ TrackGenix 🚀
 ![enter image description here](https://raw.githubusercontent.com/CristianBucci/BaSP-A2022-Etapa-1/2a065bc7d2b47b5e2ff9c1c40d69a00809193fea/Semana-02/assets/img/trackgenix.png)
 ## Contents 📝
   - [General info ℹ️](#general-info)
@@ -25,15 +25,23 @@
  ## General info  
  ℹ️
  
-  “TRACKGENIX”  is a revolutionary system designed for GigaTech Software Solutions SA. This system will allow them to efficiently manage their proyects, schedule flow, selected work teams and much more.
+  “TRACKGENIX”  is a revolutionary system designed for GigaTech Software Solutions SA. This system will allow them to 
+  efficiently manage their proyects, schedule flow, selected work teams and much more.
 ## About US
 👥 
 
-RadiumRocket developed TrackGenix as a software solution for optimal time-tracking and project management as a request for one of its most trusted clients, GigaTech Software Solutions, in late 2021, and swiftly became one of the most requested services in all of the million-dollar South American productivity industry. RadiumRocket are a group of passionate people fond of the latest cutting edge technologies in software development. They position ourselves at your side through all the process of development being responsible and co-workers with you to successfully get your product moving.
+RadiumRocket developed TrackGenix as a software solution for optimal time-tracking and project management as a request
+ for one of its most trusted clients, GigaTech Software Solutions, in late 2021, and swiftly became one of the most
+  requested services in all of the million-dollar South American productivity industry. RadiumRocket are a group of 
+  passionate people fond of the latest cutting edge technologies in software development. They position ourselves at 
+  your side through all the process of development being responsible and co-workers with you to successfully get your
+   product moving.
 ## What We Do? 
 💡
 
-Our mission is to allow workers all over the world to reach their full potential. Our goal is to bring more power to start-ups through top-notch and user-friendly time-tracking web apps, easily accessible through any device. We believe in integrity, honesty, passion for our client’s ideas and communication.
+Our mission is to allow workers all over the world to reach their full potential. Our goal is to bring more power to 
+start-ups through top-notch and user-friendly time-tracking web apps, easily accessible through any device. 
+We believe in integrity, honesty, passion for our client’s ideas and communication.
 ## Technologies 
 ⛮
 ```
