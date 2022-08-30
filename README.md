@@ -7,6 +7,7 @@
   - [Technologies ⛮](#technologies)
   - [Setup 🔧](#setup)
   - [Status 💹](#status)
+  - [Week1 📅](#week1)
   - [Week2 📅](#week2)
   - [Week3 📅](#week3)
   - [Week4 📅](#week4)
@@ -60,10 +61,21 @@ Link: https://github.com/CristianBucci/BaSP-A2022-Etapa-1.git
 ```
 Page in progress, sorry for the inconvenience 👷 🚧
 ```
+
+## Week1
+📅
+### Create a ScreenFlow in Figma of the Transgenix page.
+#### Tasks:
+ - [x] *The group is divided into teams with a specific role*
+ - [x] *Our team will do the part of Employee PM*
+ - [x] *Plan the necessary screens*
+ - [x] *Make all the screens and functionalities to fulfill the indicated role*
+ - [x] *Do it only for desktop version*
+ - [x] *Work as a team to achieve the result* 
 ## Week2  
 📅
 ### HTML structure of landing page.  
-#### Challenge:
+#### Tasks:
  - [x] *Create the local and remote repositories*
  - [x] *Define the scaffolding of the project*
  - [x] *Make the HTML structure of the landing page*
@@ -72,27 +84,40 @@ Page in progress, sorry for the inconvenience 👷 🚧
  - [x] *Be participative in the course group* 
 ## Week3 
 📅 
+#### This week's information will be completed soon.
 ## Week4  
 📅
+#### This week's information will be completed soon.
 ## Week5  
 📅
+#### This week's information will be completed soon.
 ## Week6  
 📅
+#### This week's information will be completed soon.
 ## Week7  
 📅
+#### This week's information will be completed soon.
 ## Week8  
 📅
+#### This week's information will be completed soon.
 ## Week9  
 📅
+#### This week's information will be completed soon.
 ## Week10 
 📅
+#### This week's information will be completed soon.
 ## Week11 
 📅
+#### This week's information will be completed soon.
 ## Week12 
 📅
+#### This week's information will be completed soon.
 ## Week13 
 📅
+#### This week's information will be completed soon.
 ## Week14 
 📅
+#### This week's information will be completed soon.
 ## Week15 
 📅
+#### This week's information will be completed soon.
