@@ -10,12 +10,13 @@
 		<title>
 			Trackgenix
 		</title>
+		<link rel="stylesheet" href="CSS/style.css">
 	</head>
 	<body>
 		<header>
 			<img src="assets/img/radium-rocket-logo-img.png" alt="radium-rocket-logo-img">
-			<h1> 
-				TRACKGENIX 
+			<h1>
+				TRACKGENIX
 			</h1>
 			<nav>
 				<ul>
@@ -28,7 +29,7 @@
 					</li>
 					<li>
 						<button>
-							<a href="#">
+							<a href="#" >
 								Why Should You Use Trackgenix
 							</a>
 						</button>
@@ -71,32 +72,24 @@
 			</h4>
 			<ul>
 				<li>
-					<button>
-						<a href="#">
-							Home
-						</a>
-					</button>
+					<a href="#">
+						Home
+					</a>
 				</li>
 				<li>
-					<button>
-						<a href="#">
-							Sign up
-						</a>
-					</button>
+					<a href="#">
+						Sign up
+					</a>
 				</li>
 				<li>
-					<button>
-						<a href="#">
-							Login
-						</a>
-					</button>
+					<a href="#">
+						Login
+					</a>
 				</li>
 				<li>
-					<button>
-						<a href="#">
-							Contact Information
-						</a>
-					</button>
+					<a id="contact-inf-aside" href="#">
+						Contact Information
+					</a>
 				</li>
 			</ul>
 			<img src="assets/img/radium-rocket-logo-img.png" alt="radium-rocket-logo-img">
@@ -105,79 +98,83 @@
 			</p>
 		</aside>
 		<main>
-			<section>
-				<h2>
-					Welcome 
-				</h2>
+			<section class="section" id="first-section">
+					<h2>
+						WELCOME
+					</h2>					
 				<article>
-					<p>
-						“TRACKGENIX” is a revolutionary system designed for GigaTech Software
-						Solutions SA. This system will allow them to efficiently manage their
-						proyects, schedule flow, selected work teams and much more
-					</p>
-					<img
-					src="assets/img/landing-section-img.png"				alt="first-section-img"/>
+					<div>
+						<p>
+							“TRACKGENIX” is a revolutionary system
+							designed for GigaTech Software
+						</p>
+						<p>
+							Solutions SA.
+						</p>
+						<p>
+							This system will allow them to efficiently
+							manage their proyects, schedule flow,
+							selected work teams and much more.
+						</p>
+					</div>
+					<img src="assets/img/landing-section-img.png" alt="first-section-img"/>
 				</article>
 			</section>
-			<section>
-				<h2> 
-					Application Features 
+			<section id="section-2">
+				<h2>
+					Application Features
 				</h2>
 				<article>
-					<h3> 
-						Hours Log 
+					<h3>
+						Hours Log
 					</h3>
 					<img src="assets/img/hours-log-img.png" alt="hours-log-img"/>
 				</article>
 				<article>
-					<h3> 
-						Reports 
+					<h3>
+						Reports
 					</h3>
 					<img src="assets/img/reports-img.png" alt="reports-img"/>
 				</article>
 				<article>
-					<h3> 
-						Resource Management 
+					<h3>
+						Resource Management
 					</h3>
 					<img src="assets/img/resource-management-img.png" alt="resource-management-img"/>
 				</article>
 				<article>
-					<h3> 
-						Multiple Roles 
+					<h3>
+						Multiple Roles
 					</h3>
 					<img src="assets/img/multiple-roles-img.png" alt="multiple-roles-img"/>
 				</article>
 			</section>
 			<section>
-				<h2> 
-					Why you should use Trackgenix? 
+				<h2>
+					Why you should use Trackgenix?
 				</h2>
 				<article>
-					<h3> 
-						Productivity Booster 
+					<h3>
+						Productivity Booster
 					</h3>
 					<p>
 						Be more productive using better Focus, Time Management,Organization
 						and Efficiency
 					</p>
-					<img
-						src="assets/img/productivity-booster-img.png"
-						alt="productivity-booster-img"/>
+					<img src="assets/img/productivity-booster-img.png" alt="productivity-booster-img"/>
 				</article>
 				<article>
-					<h3> 
-						Work Traceability 
+					<h3>
+						Work Traceability
 					</h3>
-					<p> 
-						Keep track of specs, changes, requests, results, and versions 
+					<p>
+						Keep track of specs, changes, requests, results, and versions
 					</p>
-					<img
-						src="assets/img/work-traceability-img.png"
-						alt="work-traceability-img"/>
+					<img src="assets/img/work-traceability-img.png"	alt="work-traceability-img"/>
 				</article>
 				<article>
-					<h3> 
-						Leadership and team management 
+					<h3>
+						Leadership and team management
 					</h3>
 					<p>
 						Lead a group of people in accomplishing a task or common goal.
@@ -190,11 +187,11 @@
 						alt="leadership-management-img"/>
 				</article>
 				<article>
-					<h3> 
-						Decision making 
+					<h3>
+						Decision making
 					</h3>
-					<p> 
-						Make better decisions for your business 
+					<p>
+						Make better decisions for your business
 					</p>
 					<img
 						src="assets/img/decision-making-img.png"
@@ -202,8 +199,8 @@
 				</article>
 			</section>
 			<section>
-				<h2> 
-					Inscription Form 
+				<h2>
+					Inscription Form
 				</h2>
 				<form>
 					<input type="text" name="name" placeholder="Name"/>
@@ -232,7 +229,7 @@
 					</label>
 					<h5>
 						Text
-					</h5>					
+					</h5>
 					<textarea name="textarea" placeholder="Enter your text here"></textarea>
 					<input type="submit" name="submit" value="Submit">
 				</form>
@@ -249,7 +246,10 @@
 						Make time your ally; make puntuality the difference
 					</h4>
 					<p>
-						Our mission is to allow workers all over the world to reach their full potential. Our goal is to bring more power to start-ups through top-notch and user-friendly time-tracking web apps, easily accessible through any device. We believe in integrity, honesty, passion for our client’s ideas and communication.
+						Our mission is to allow workers all over the world to reach their full potential. Our goal
+						is to bring more power to start-ups through top-notch and user-friendly time-tracking web 
+						apps,easily accessible through any device. We believe in integrity, honesty, passion for our
+						client’s ideas and communication.
 					</p>
 				</article>
 				<article>
@@ -257,15 +257,22 @@
 						HEAR WHAT THEY SAY ABOUT US
 					</h3>
 					<P>
-						“TrackGenix allows us to effortlessly and easily track total workflow in each of our projects and make a balanced distribution of team workload” -Satisfied Customer
+						“TrackGenix allows us to effortlessly and easily track total workflow in each of our 
+						projects and make a balanced distribution of team workload” -Satisfied Customer
 					</P>
 				</article>
-				<article>					
+				<article>
 					<h3>
 						About Us
 					</h3>
 					<p>
-						RadiumRocket developed TrackGenix as a software solution for optimal time-tracking and project management as a request for one of its most trusted clients, GigaTech Software Solutions, in late 2021, and swiftly became one of the most requested services in all of the million-dollar South American productivity industry.	RadiumRocket are a group of passionate people fond of the latest cutting edge technologies in software development. They position ourselves at your side through all the process of development being responsible and co-workers with you to successfully get your product moving.
+						RadiumRocket developed TrackGenix as a software solution for optimal time-tracking and project
+						management as a request for one of its most trusted clients, GigaTech Software Solutions,
+						in late 2021, and swiftly became one of the most requested services in all of the
+						million-dollar South American productivity industry.	RadiumRocket are a group of passionate
+						people fond of the latest cutting edge technologies in software development. They position
+						ourselves at your side through all the process of development being responsible and co-workers
+						with you to successfully get your product moving.
 					</p>
 					<img src="assets/img/security-about-us-img.png" alt="security-img">
 				</article>
@@ -303,7 +310,8 @@
 						Customized working day registration policies
 					</h4>
 					<p>
-						Customize the mandatory registration of the working day with a completely flexible app to clock in at work. Apply more restrictive measures:
+						Customize the mandatory registration of the working day with a completely flexible app
+						to clock in at work. Apply more restrictive measures:
 					</p>
 					<ul>
 						<li>
@@ -343,7 +351,7 @@
 						Project Management Done Well
 					</h4>
 					<p>
-						Advanced controls and features to effortlessly control all your projects 
+						Advanced controls and features to effortlessly control all your projects
 					</p>
 					<ul>
 						<li>
@@ -351,7 +359,7 @@
 						</li>
 						<li>
 							Equipped with graphs and tables
-						</li>						
+						</li>
 					</ul>
 				</article>
 				<section>
@@ -363,8 +371,9 @@
 						<h3>
 							GigaTech Software Solutions SA building.
 						</h3>
-						<p>			
-							Trackgenix is ​​a HR software company that streamlines human resource management for clients in more than 1,200 cities around the world.
+						<p>
+							Trackgenix is ​​a HR software company that streamlines human resource management for
+							clients in more than 1,200 cities around the world.
 						</p>
 					</article>
 					<article>
@@ -373,7 +382,9 @@
 							An inclusive workplace for everyone
 						</h3>
 						<p>
-							Get to know our team and our offices and join us in our leap towards better human resources management. Learn how companies from all sectors already manage talent in a more efficient and humane way with our human resources software.
+							Get to know our team and our offices and join us in our leap towards better human
+							resources management. Learn how companies from all sectors already manage talent in
+							a more efficient and humane way with our human resources software.
 						</p>
 					</article>
 					<article>
@@ -382,7 +393,10 @@
 							Our workplace, our world
 						</h3>
 						<p>
-							Trackgenix was created remotely in 2008 by Yves Hiernaux and Mic Cvilic after many years of working with hard-to-manage and even harder-to-understand reports and timesheets. Although we have grown, we continue with the same goal of offering a flexible, reliable and easy-to-use time control tool.
+							Trackgenix was created remotely in 2008 by Yves Hiernaux and Mic Cvilic after many years
+							of working with hard-to-manage and even harder-to-understand reports and timesheets.
+							Although we have grown, we continue with the same goal of offering a flexible, reliable
+							and easy-to-use time control tool.
 						</p>
 					</article>
 				</section>
@@ -402,11 +416,11 @@
 							24h support by online chat-bot
 						</p>
 					</article>
-				</section>		
+				</section>
 				<section>
 					<h2>
 						Tutorials
-					</h2>	
+					</h2>
 					<article>
 						<ol>
 							<li>
@@ -416,7 +430,7 @@
 								"How to set up TrackGenix for your company: In-depth guide"	31:02
 							</li>
 							<li>
-								"Project Management using TrackGenix"	22:15
+								"Project Management using TrackGenix" 22:15
 							</li>
 							<li>
 								"Unlocking Max Productivity: Advanced Tips and Tricks for Workers"	12:40
@@ -432,10 +446,10 @@
 							<button>
 								Browse Full Playlist on YouTube
 							</button>
-						</a>								
+						</a>
 					</article>
-				</section>	
-		</main>	
+				</section>
+		</main>
 		<footer>
 			<ul>
 				<li>
@@ -450,7 +464,7 @@
 				</li>
 				<li>
 					<a href="https://www.instagram.com/">
-						<img src="assets/img/instagram-footer-icon.png" alt="instagram-footer-icon">				
+						<img src="assets/img/instagram-footer-icon.png" alt="instagram-footer-icon">
 					</a>
 				</li>
 				<li>
@@ -465,8 +479,8 @@
 				</h6>
 				<p>
 					Copyright &copy; 2022 Gigatech Software Solutions, All rights reserved.
-				</p>			
-			</div>		
-		</footer>			
+				</p>
+			</div>
+		</footer>
 	</body>
 </html>
