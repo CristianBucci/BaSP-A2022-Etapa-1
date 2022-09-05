@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',sans-serif;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+header {
+    position: fixed;
+    width: 1512px;
+    height: 91px;
+    background-color: #373867;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+nav {
+    box-sizing: border-box;
+    top: 88px;
+    float: right;
+    position: relative;
+    width: 1260px;
+    height: 55px;
+    background-color: #373867;
+}
+
+aside {
+    top: 91px;
+    background: #3738671A;
+    position: fixed;
+    width: 253px;
+    height: 851px;
+    z-index: 1;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+.header-trackgenix-title {
+    position: absolute;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',sans-serif;
+    font-size: 60px;
+    bottom: 13px;
+    text-align: center;
+    color: #46a07B;
+    width: 100%;
+}
+
+.header-radium-rocket-logo {
+    position: relative;
+    width: 65px;
+    height: 67px;
+    top: 12px;
+    left: 26px;
+}
+
+.element-li-navbar {
+    width: 210px;
+    display: inline;
+    float: left;
+    border: none;
+    box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.element-button-navbar {
+    width: 210px;
+    height: 55px;
+    border: none;
+    background-color: #373867;
+}
+
+.element-a-navbar {
+    display: block;
+    color: #46a07B;
+    box-sizing: border-box;
+    border: none;
+    font-size: 20px;
+}
+
+.element-a-navbar:hover {
+    text-shadow: 0 0 5px  #fff;
+}
+
+aside p {
+    position: absolute;
+    top: 649px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',sans-serif;
+    font-size: 11px;
+    left: 12px;
+}
+
+aside input {
+    box-sizing: border-box;
+    position: relative;
+    width: 236px;
+    height: 30.49px;
+    top: 20px;
+    left:8px ;
+    border-radius: 3.42px;
+}
+
+aside h4 {
+    position: relative;
+    font-size: 19.37px;
+    color: #373867;
+    top: 41px;
+    left: 92px;
+    z-index: 1;
+}
+
+aside li {
+    display:block;
+    height: 64px;
+    position:relative;
+    left: 46px;
+    top: 43px;
+}
+
+aside li a {
+    position: relative;
+    display: block;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',sans-serif;
+    font-size: 14.64px;
+    color: #46a07B;
+    width: 142px;
+    text-align: center;
+    border-bottom: 1px solid black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+aside li a:hover {
+    text-shadow: 0 0 5px  #fff;
+}
+
+aside img {
+    position: relative;
+    text-align: center;
+    width: 66px;
+    height: 75px;
+    left: 95px;
+    top: 257px;
+}
