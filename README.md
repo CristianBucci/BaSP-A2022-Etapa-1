@@ -50,6 +50,8 @@ Project is created at the moment with:
 ✔️ Git
 ✔️ GitHub
 ✔️ HTML
+✔️ CSS
+
 ```
 ## Setup
 🔧
@@ -84,7 +86,14 @@ Page in progress, sorry for the inconvenience 👷 🚧
  - [x] *Be participative in the course group* 
 ## Week3 
 📅 
-#### This week's information will be completed soon.
+### Add style with css, pixel-perfect.
+### Tasks:
+ - [x] *Create folder structure for css*
+ - [x] *Add styles to the HTML based on the landing page*
+ - [x] *Do it with the pixel-perfect methodology*
+ - [x] *Use git to save our progress to the repositories*
+ - [x] *Update this README*  
+ - [x] *Be participative in the course group*
 ## Week4  
 📅
 #### This week's information will be completed soon.
