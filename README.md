@@ -96,7 +96,14 @@ Page in progress, sorry for the inconvenience 👷 🚧
  - [x] *Be participative in the course group*
 ## Week4  
 📅
-#### This week's information will be completed soon.
+### Add style with css, flex-box.
+### Tasks:
+ - [x] *Create new folder structure for css in folder week-04*
+ - [x] *Add styles to the HTML based on the landing page*
+ - [x] *Do it with the flex-box methodology*
+ - [x] *Use git to save our progress to the repositories*
+ - [x] *Update this README*  
+ - [x] *Be participative in the course group*
 ## Week5  
 📅
 #### This week's information will be completed soon.
