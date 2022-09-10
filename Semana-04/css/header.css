@@ -1,0 +1,21 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 91px;
+    margin-bottom: 1.5rem;
+    background: #373867;
+}
+
+.header-trackgenix-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #46a07b;
+}
+
+@media only screen and (max-width: 734px) {
+    .navbar-container {
+      display: none;
+    }
+}

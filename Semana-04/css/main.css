@@ -1,0 +1,86 @@
+.welcome-title-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+
+.welcome-title {
+    font-size: 2.5rem;
+    color: #373867;
+    padding: 10px 30px;
+    border: 1px solid #000;
+    border-radius: 1rem;
+    background: linear-gradient(0deg, rgba(170, 206, 155, 0.53), rgba(170, 206, 155, 0.53));
+}
+
+.first-section-img-and-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-section-img {
+    width: 65%;
+    margin-bottom: 4rem;
+}
+
+.welcome-section-text {
+    font-size: 1.3rem;
+}
+
+.welcome-section-text {
+    width: 80%;
+    margin-bottom: 7rem;
+}
+
+.line-division-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+}
+
+.section-line-division {
+    height: 1px;
+    width: 60%;
+    background-color: #000;
+}
+
+.application-features-title-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+
+}
+
+.application-features-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #373867;
+
+}
+
+.applicatin-title-and-img-container {
+    display: flex;
+    margin-bottom: 4.5rem;
+}
+
+.application-title-and-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.each-application-title {
+    margin-bottom: 0.8rem;
+    color: #373867;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.aplication-img {
+    width: 50%;
+}

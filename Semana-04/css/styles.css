@@ -1,0 +1,13 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+.radium-rocket-logo {
+   max-width: 15%;
+}
+
+img {
+    max-width: 380px;
+}
+

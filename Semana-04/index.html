@@ -6,21 +6,26 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta
 			name="Description"
-			content="“TRACKGENIX” is a revolutionary system designed to efficiently manage proyects, schedule flow, selected work teams and much more"/>
+			content="“TRACKGENIX” is a revolutionary system designed to efficiently manage proyects, schedule flow,
+			 selected work teams and much more"/>
 		<title>
 			Trackgenix
 		</title>
 		<link rel="stylesheet" href="CSS/reset.css">
-		<link rel="stylesheet" href="CSS/style.css">
+		<link rel="stylesheet" href="CSS/styles.css">
+		<link rel="stylesheet" href="css/header.css">
+		<link rel="stylesheet" href="css/aside.css">
+		<link rel="stylesheet" href="css/main.css">
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<header>
-			<img class="header-radium-rocket-logo" src="assets/img/radium-rocket-logo-img.png" alt="radium-rocket-logo-img">
+			<img class="radium-rocket-logo" src="assets/img/radium-rocket-logo-img.png" alt="radium-rocket-logo-img">
 			<h1 class="header-trackgenix-title">
 				TRACKGENIX
 			</h1>
-			<nav>
+			<img src="assets/img/rasp-menu-hamb.png" alt="hamburg-menu">
+			<nav class="navbar-container">
 				<ul>
 					<li class="element-li-navbar">
 						<button class="element-button-navbar">
@@ -94,65 +99,72 @@
 					</a>
 				</li>
 			</ul>
-			<img class="aside-radium-rocket-logo" src="assets/img/radium-rocket-logo-img.png" alt="radium-rocket-logo-img">
+			<img class="aside-radium-rocket-logo" src="assets/img/radium-rocket-logo-img.png" 
+			alt="radium-rocket-logo-img">
 			<p class="aside-text">
 				Developed by GigaTech Software Solutions S.A
 			</p>
 		</aside>
 		<main>
 			<section class="welcome-section">
-				<div class="welcome-background-blur"></div>
-				<h2 class="welcome-title">
-					WELCOME
-				</h2>
-				<article>
-						<p class="welcome-section-paragraph">
-							“TRACKGENIX” is a revolutionary system
-							designed for GigaTech Software
+				<div class="welcome-title-container">
+					<h2 class="welcome-title">
+						WELCOME
+					</h2>
+				</div>
+				<article class="first-section-img-and-text-container">					
+						<img class="welcome-section-img" src="assets/img/landing-section-img.png" 
+						alt="first-section-img"/>		
+						<p class="welcome-section-text">
+							Welcome to “TRACKGENIX” is a revolutionary system designed for GigaTech Software
+							Solutions SA. This system will allow them to efficiently manage their
+							proyects, schedule flow, selected work teams and much more.
 						</p>
-						<p class="welcome-section-paragraph">
-							Solutions SA.
-						</p>
-						<p class="welcome-section-paragraph">
-							This system will allow them to efficiently
-							manage their proyects, schedule flow,
-							selected work teams and much more.
-						</p>
-						<img class="welcome-section-img" src="assets/img/landing-section-img.png" alt="first-section-img"/>
 				</article>
 			</section>
-			<div class="section-line-division"></div>
+			<div class="line-division-container">
+				<div class="section-line-division"></div>
+			</div>
 			<section class="application-features-section">
-				<h2 class="application-features-title">
-					Application Features
-				</h2>
-				<article class="application-title-and-img">
-					<h3 class="each-application-title">
-						Hours Log
-					</h3>
-					<img class="aplication-img"
-					src="assets/img/hours-log-img.png" alt="hours-log-img"/>
-				</article>
-				<article class="application-title-and-img">
-					<h3 class="each-application-title">
-						Reports
-					</h3>
-					<img class="aplication-img" src="assets/img/reports-img.png" alt="reports-img"/>
-				</article>
-				<article class="application-title-and-img">
-					<h3 class="each-application-title">
-						Resource Management
-					</h3>
-					<img class="aplication-img" src="assets/img/resource-management-img.png" alt="resource-management-img"/>
-				</article>
-				<article class="application-title-and-img">
-					<h3 class="each-application-title">
-						Multiple Roles
-					</h3>
-					<img class="aplication-img" src="assets/img/multiple-roles-img.png" alt="multiple-roles-img"/>
-				</article>
+				<div class="application-features-title-container">
+					<h2 class="application-features-title">
+						Application Features
+					</h2>
+				</div>
+				<article class="applicatin-title-and-img-container">
+					<div class="application-title-and-img">
+						<h3 class="each-application-title">
+							Hours Log
+						</h3>
+						<img class="aplication-img"
+						src="assets/img/hours-log-img.png" alt="hours-log-img"/>
+					</div>
+					<div class="application-title-and-img">
+						<h3 class="each-application-title">
+							Reports
+						</h3>
+						<img class="aplication-img" src="assets/img/reports-img.png" alt="reports-img"/>
+					</div>
+					</article>
+				<article class="applicatin-title-and-img-container">
+					<div class="application-title-and-img">
+						<h3 class="each-application-title">
+							Resource Management
+						</h3>
+						<img class="aplication-img" src="assets/img/resource-management-img.png"
+						alt="resource-management-img"/>
+					</div>	
+					<div class="application-title-and-img">
+						<h3 class="each-application-title">
+							Multiple Roles
+						</h3>
+						<img class="aplication-img" src="assets/img/multiple-roles-img.png" alt="multiple-roles-img"/>
+					</div>	
+					</article>
 			</section>
-			<div class="section-line-division"></div>
+			<div class="line-division-container">
+				<div class="section-line-division"></div>
+			</div>
 			<section class="why-should-use-tg-section">
 				<h2 class="why-should-use-tg-section-title">
 					Why you should use Trackgenix?
@@ -179,7 +191,8 @@
 							Keep track of specs, changes, requests, results, and versions
 						</p>
 						<div class="background-work-traceability"></div>
-						<img class="use-trackgenix-each-img" src="assets/img/work-traceability-img.png"	alt="work-traceability-img"/>
+						<img class="use-trackgenix-each-img" src="assets/img/work-traceability-img.png"
+							alt="work-traceability-img"/>
 				</article>
 				<article class="use-trackgenix-tite-img-text-container">
 					<h3 class="use-trackgenix-subtitles">
