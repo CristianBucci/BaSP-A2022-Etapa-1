@@ -1,6 +1,6 @@
 *{
     box-sizing: border-box;
-    font-family: 'Roboto';
+    font-family: 'Roboto',Arial, Helvetica, sans-serif;
 }
 
 .radium-rocket-logo {
@@ -11,3 +11,10 @@ img {
     max-width: 380px;
 }
 
+html {
+    height: 9000px;
+}
+
+a {
+    text-decoration: none;
+}
