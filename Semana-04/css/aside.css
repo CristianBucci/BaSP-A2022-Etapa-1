@@ -1,30 +1,26 @@
-@media only screen and (max-width: 768px) {
-    .aside-container {
-      display: none;
-    }
-}
-
-aside{
+.aside-container{  
+  display: none;
   position: fixed;
-  width: 30%; 
+  width: 30%;
+  max-width: 320px; 
   height: 100%;
-  top: 5.5rem;
+  top: 5.5em;
   background: #3738671A;
 }
 
 .search-input {
   width: 80%;
-  height: 1.7rem;
-  margin-left: 0.7rem;
-  margin-top: 4.5rem;
-  padding-right: 1.5rem;
+  height: 1.7em;
+  margin-left: 0.7em;
+  margin-top: 4.5em;
+  padding-right: 1.5em;
   background: url("../assets/img/search-icon.jpeg") no-repeat right;
-  background-size: 1.3rem;
-  border-radius: 0.25rem;
+  background-size: 1.3em;
+  border-radius: 0.25em;
 }
 
 .aside-container h4 {
-  margin-top: 1.8rem;
+  margin-top: 1.8em;
   font-size: 1.2rem;
   font-weight: 700;
   text-align: center;
@@ -38,17 +34,17 @@ aside{
 }
 
 .aside-container li {
-  width: 9rem;
-  height: 2.6rem;
-  margin-top: 1.1rem;
-  padding-bottom: 0.5rem;
+  width: 9em;
+  height: 2.6em;
+  margin-top: 1.1em;
+  padding-bottom: 0.5em;
   text-align: center;
   border-bottom: 1px solid #000;
 }
 
 .aside-container .contact-information-selector {
   border-bottom: none;
-  margin-bottom: 13rem;
+  margin-bottom: 13em;
 }
 
 .aside-container a {
@@ -65,9 +61,15 @@ aside{
 
 .aside-container img {
   max-width: 30%;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.2em;
 }
 
 .aside-container p {
   font-size: 0.6rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .aside-container {
+    display: block;
+  }
 }
