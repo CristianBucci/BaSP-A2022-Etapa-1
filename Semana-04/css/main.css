@@ -10,13 +10,13 @@
 }
 
 .welcome-title-container h2 {
+    margin-top: 5rem;
     padding: 0.6rem 1.8rem;
     background: linear-gradient(0deg, rgba(170, 206, 155, 0.53), rgba(170, 206, 155, 0.53));
     border: 0.2rem solid #94a08f ;
     border-radius: 1rem;
     font-size: 2.5rem;
     color: #373867;
-    margin-top: 5rem;
 }
 
 .first-section-img-and-text-container {
@@ -95,17 +95,15 @@
     width: 50%;
 }
 
-.articles-wrap {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 3rem;
-   
-}
-
 .why-should-use-TG-container {
     margin-top: 3.7rem;
     margin-bottom: 6.4rem;    
+}
+
+.why-use-TG-articles-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;      
 }
 
 .why-should-use-TG-container h2 {
@@ -115,51 +113,53 @@
     text-align: center;
 }
 
-.use-trackgenix-tite-img-text-container {    
+.why-use-TG-articles-wrap article {    
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
-    margin-bottom: 3rem;    
+    height: 14rem; 
 }
 
 @media only screen and (min-width: 1200px) {
-    .articles-wrap {
+    .why-use-TG-articles-wrap {
         flex-direction: row;
     }
-    .use-trackgenix-tite-img-text-container {
+    .why-use-TG-articles-wrap article {
         width: 50%;
     }
 }
 
-.use-trackgenix-subtitle-container{
-    margin-left: 2rem;
+.use-trackgenix-text-container{
+    margin: auto;
+    padding: 1rem;
     width: 60%;
 }
 
-.use-trackgenix-subtitle-container h3 {
+.use-trackgenix-text-container h3 {
     margin-bottom: 1rem;
     font-size: 1.3rem;
     font-weight: 700;
     color: #373867;
 }
 
-.use-trackgenix-subtitle-container p {
+.use-trackgenix-text-container p {
     font-size: 1rem;
     font-weight: 400;
     color: #373867;
 }
 
 .Why-you-should-background {
-    width: 5.5rem;
-    height: 5.5rem;
     display: flex;
     justify-content: center;
     transform: rotate(45deg);
+    width: 5.5rem;
+    height: 5.5rem;
+    margin-left: 1.5rem;
     background: #AACE9B4D;
 }
 
-.use-trackgenix-tite-img-text-container img {
+.why-use-TG-articles-wrap article img {
     width: 70%;
     padding: 1.2rem;
     transform: rotate(315deg);
@@ -201,7 +201,7 @@
 }
 
 .human-tablet-pc-hidden {
-    display: inline-block;
+    display: none;
     font-size: 0.8rem;
 }
 
@@ -210,19 +210,24 @@
     font-weight: 500;
 }
 
-@media only screen and (max-width: 768px) {
-    .textarea-title {
-      display: none;
+form h5 {
+    visibility: hidden;
+    font-size: 1rem;
+    font-weight: 800;
+    margin-left: 4rem;
+    margin-top: 3rem;
+}
+
+@media only screen and (min-width: 768px) {
+    form h5 {
+      visibility: visible;
     }
     .human-tablet-pc-hidden {
-        display: none;
+        display: inline-block;
     }
 }
 
 @media only screen and (min-width: 768px) {
-    .textarea-title {
-      display: none;
-    }
     .name-email-input-container {
         display: flex;
         width: 80%;
@@ -233,13 +238,13 @@
     }    
 }
 
-.text-area-conainer {
+.text-area-container {
     display: flex;
     justify-content: center;
     margin-top: 1.7rem;
 }
 
-.text-area-conainer textarea {
+.text-area-container textarea {
     width: 85%;
     height: 24rem;
     border-radius: 0.25rem;
@@ -253,7 +258,7 @@
     margin-bottom: 5rem;
 }
 
-.form-submit-button {
+.button-container input {
     background-color: #373867;
     color: #46a07b ;
 }
@@ -289,7 +294,7 @@
     font-weight: 700;
 }
 
-.company-mission-radium-rocket-logo {
+.company-mission-section img {
     width: 6rem;
     height: 7rem;
     margin-right: 0.5rem;
@@ -309,7 +314,7 @@
 }
 }
 
-.company-titles-container .where-we-started-title-behind {
+.company-titles-container .where-we-are-headed-underline {
     text-decoration: underline #000;
 }
 
@@ -353,7 +358,7 @@
     text-align: center;
 }
 
-#stisfied-customer {
+.hear-they-say-us .stisfied-customer {
     text-align: right;
     margin-top: 0.5rem;
     font-weight: 500;
@@ -473,13 +478,13 @@
     margin-bottom: 5rem;
 }
 
-.company-sections-wrap {
+.company-section article {
     display: block;
     justify-content: space-between;
     margin-bottom: 4rem;
 }
 
-.company-an-inclusive-wrap {
+.company-section .company-an-inclusive-wrap {
     display: block;
     justify-content: space-between;
     margin-bottom: 4rem;

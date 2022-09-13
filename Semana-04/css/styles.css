@@ -6,6 +6,11 @@ html, body{
 .radium-rocket-logo {
    max-width: 15%;
 }
+
 a {
     text-decoration: none;
+}
+
+ul, ol {
+    list-style: none;
 }
