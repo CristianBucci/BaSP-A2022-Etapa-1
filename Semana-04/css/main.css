@@ -1,6 +1,5 @@
 .welcome-section {
-    background: linear-gradient(180deg, rgba(198, 226, 230, 0.6399) 1.57%, rgba(88, 151, 159, 0.2212) 19.27%, rgba
-    (71, 147, 129, 0.1343) 35.94%, rgba(165, 207, 187, 0.1027) 58.33%, rgba(255, 255, 255, 0) 83.85%);
+    background: linear-gradient(180deg, rgba(198, 226, 230, 0.6399) 1.57%, rgba(88, 151, 159, 0.2212) 19.27%, rgba(71, 147, 129, 0.1343) 35.94%, rgba(165, 207, 187, 0.1027) 58.33%, rgba(255, 255, 255, 0) 83.85%);
 }
 
 .welcome-title-container {
@@ -228,8 +227,7 @@ form h5 {
 }
 
 .company-mission-section {
-    background: linear-gradient(180deg, rgba(198, 226, 230, 0.5925) 1.57%, rgba(88, 151, 159, 0.2212) 19.27%, rgba
-    (71, 147, 129, 0.1343) 35.94%, rgba(165, 207, 187, 0.1027) 58.33%, rgba(255, 255, 255, 0) 83.85%);
+    background: linear-gradient(180deg, rgba(198, 226, 230, 0.5925) 1.57%, rgba(88, 151, 159, 0.2212) 19.27%, rgba(71, 147, 129, 0.1343) 35.94%, rgba(165, 207, 187, 0.1027) 58.33%, rgba(255, 255, 255, 0) 83.85%);
 }
 
 .company-mission-wrap {
@@ -416,7 +414,7 @@ form h5 {
     margin-bottom: 4em;
 }
 
-.company-section .company-an-inclusive-wrap {
+.company-an-inclusive-wrap{
     display: block;
     justify-content: space-between;
     margin-bottom: 4em;
@@ -476,6 +474,7 @@ form h5 {
 
 .support-section img {
     width: 80%;
+    margin-left: 2rem;
     margin-bottom: 1.5em;
 }
 
@@ -508,7 +507,7 @@ form h5 {
 .tutorials-list-container ol {
     margin: 0.5em;
     margin-left: 1.8rem;
-    margin-right: 2rem;
+    margin-right: 3rem;
     list-style: decimal;
     font-size: 1.2rem;
     font-weight: 700;
@@ -581,9 +580,14 @@ form h5 {
         margin-right: 1em;
     }
 
+    .company-section article {
+        display: flex;
+    }
+
     .company-sections-wrap, .company-an-inclusive-wrap{
         display: flex;
     }
+
 }
 
 @media only screen and (min-width: 1200px) {
