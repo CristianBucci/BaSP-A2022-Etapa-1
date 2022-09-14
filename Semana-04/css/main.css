@@ -423,7 +423,6 @@ form h5 {
     text-align: right;
 }
 
-
 .company-section h2 {
     margin-left: 2em;
     margin-bottom: 2em;
@@ -437,6 +436,7 @@ form h5 {
     margin-bottom: 0.5em;
     margin-right: 2em;
 }
+
 .company-an-inclusive-wrap img {
     order: 1;
 }
@@ -475,7 +475,7 @@ form h5 {
 }
 
 .support-section img {
-    width: 75%;
+    width: 80%;
     margin-bottom: 1.5em;
 }
 
@@ -487,9 +487,10 @@ form h5 {
 
 .support-img-and-text-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
     align-items: center;
     margin-bottom: 4em;
+    margin-right: 3rem;
     text-align: center;
 }
 
@@ -507,6 +508,7 @@ form h5 {
 .tutorials-list-container ol {
     margin: 0.5em;
     margin-left: 1.8rem;
+    margin-right: 2rem;
     list-style: decimal;
     font-size: 1.2rem;
     font-weight: 700;
@@ -517,8 +519,7 @@ form h5 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
-    margin: 0.6em;
+    width: 100%;
 }
 
 .tutorial-time {
@@ -579,10 +580,6 @@ form h5 {
         margin-left: 1em;
         margin-right: 1em;
     }
-    
-    .support-img-text-container {
-        display: flex;
-    }
 
     .company-sections-wrap, .company-an-inclusive-wrap{
         display: flex;
@@ -620,5 +617,14 @@ form h5 {
 
     .our-products-container {
         width: 50%;
+    }
+
+    .support-img-text-container {
+        display: flex;
+    }
+
+    .support-section img {
+        width: 19em;
+        height: 12em;
     }
 }
