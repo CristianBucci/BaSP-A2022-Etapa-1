@@ -505,7 +505,8 @@ form h5 {
 }
 
 .tutorials-list-container ol {
-    margin: 0.5em; 
+    margin: 0.5em;
+    margin-left: 1.8rem;
     list-style: decimal;
     font-size: 1.2rem;
     font-weight: 700;
