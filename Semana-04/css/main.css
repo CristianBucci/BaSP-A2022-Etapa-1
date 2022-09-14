@@ -1,5 +1,6 @@
 .welcome-section {
-    background: linear-gradient(180deg, rgba(198, 226, 230, 0.6399) 1.57%, rgba(88, 151, 159, 0.2212) 19.27%, rgba(71, 147, 129, 0.1343) 35.94%, rgba(165, 207, 187, 0.1027) 58.33%, rgba(255, 255, 255, 0) 83.85%);
+    background: linear-gradient(180deg, rgba(198, 226, 230, 0.6399) 1.57%, rgba(88, 151, 159, 0.2212) 19.27%, rgba
+    (71, 147, 129, 0.1343) 35.94%, rgba(165, 207, 187, 0.1027) 58.33%, rgba(255, 255, 255, 0) 83.85%);
 }
 
 .welcome-title-container {
@@ -196,7 +197,7 @@
 form h5 {
     visibility: hidden;
     margin-top: 3em;
-    margin-left: 4em;
+    margin-left: 5em;
     font-size: 1rem;
     font-weight: 800;
 }
@@ -227,7 +228,8 @@ form h5 {
 }
 
 .company-mission-section {
-    background: linear-gradient(180deg, rgba(198, 226, 230, 0.5925) 1.57%, rgba(88, 151, 159, 0.2212) 19.27%, rgba(71, 147, 129, 0.1343) 35.94%, rgba(165, 207, 187, 0.1027) 58.33%, rgba(255, 255, 255, 0) 83.85%);
+    background: linear-gradient(180deg, rgba(198, 226, 230, 0.5925) 1.57%, rgba(88, 151, 159, 0.2212) 19.27%, rgba
+    (71, 147, 129, 0.1343) 35.94%, rgba(165, 207, 187, 0.1027) 58.33%, rgba(255, 255, 255, 0) 83.85%);
 }
 
 .company-mission-wrap {
@@ -424,7 +426,7 @@ form h5 {
 
 .company-section h2 {
     margin-left: 2em;
-    margin-bottom: 7em;
+    margin-bottom: 2em;
     font-size: 1.5rem;
     font-weight: 700;
     text-decoration: underline;
@@ -543,7 +545,7 @@ form h5 {
 
 @media only screen and (min-width: 768px) {
     main {
-      margin-left:min(30%, 320px);
+        margin-left:min(30%, 320px);
     }
 
     form h5 {
@@ -619,5 +621,3 @@ form h5 {
         width: 50%;
     }
 }
-
-

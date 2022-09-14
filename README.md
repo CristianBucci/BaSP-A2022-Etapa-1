@@ -1,7 +1,7 @@
 # *BaSP-A2022*/ TrackGenix 🚀
 ![enter image description here](https://raw.githubusercontent.com/CristianBucci/BaSP-A2022-Etapa-1/2a065bc7d2b47b5e2ff9c1c40d69a00809193fea/Semana-02/assets/img/trackgenix.png)
 ## Contents 📝
-  - [General info ℹ️](#general-info)
+  - [General info ℹ️](#general-info) 
   - [About US 👥](#about-us)
   - [What We Do? 💡](#what-we-do)
   - [Technologies ⛮](#technologies)
@@ -84,6 +84,7 @@ Page in progress, sorry for the inconvenience 👷 🚧
  - [x] *Use git to save our progress to the repositories*
  - [x] *Do this README*  
  - [x] *Be participative in the course group* 
+ 
 ## Week3 
 📅 
 ### Add style with css, pixel-perfect.
@@ -104,6 +105,9 @@ Page in progress, sorry for the inconvenience 👷 🚧
  - [x] *Use git to save our progress to the repositories*
  - [x] *Update this README*  
  - [x] *Be participative in the course group*
+ - [x] *Made the link in Github-Pages*
+ - [x] *Here is the link of Github-Pages repository: https://cristianbucci.github.io/BaSP-A2022-Etapa-1/Semana-04/index.html*
+  
 ## Week5  
 📅
 #### This week's information will be completed soon.
