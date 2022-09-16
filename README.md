@@ -51,6 +51,7 @@ Project is created at the moment with:
 ✔️ GitHub
 ✔️ HTML
 ✔️ CSS
+✔️ JavaScript
 
 ```
 ## Setup
