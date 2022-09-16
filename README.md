@@ -110,6 +110,18 @@ Page in progress, sorry for the inconvenience 👷 🚧
   
 ## Week5  
 📅
+### Excercises with JavaScript.
+### Tasks:
+ - [x] *Create new folder Exercise for JS in week-05*
+ - [x] *Create a JS file for each exercise* 
+ - [x] *Do the exercises applying what we learned about JS*
+ - [x] *Follow good practices*
+ - [x] *Make commits and push for each exercise*
+ - [x] *Update this README*  
+ - [x] *Be participative in the course group*
+ - [x] *Made the link in Github-Pages for week 05*
+ - [x] *Here is the link of Github-Pages repository: https://cristianbucci.github.io/BaSP-A2022-Etapa-1/Semana-05/index.html*
+  
 #### This week's information will be completed soon.
 ## Week6  
 📅
