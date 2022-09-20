@@ -1,20 +1,21 @@
 .welcome-section {
-    background: linear-gradient(180deg, rgba(198, 226, 230, 0.6399) 1.57%, rgba(88, 151, 159, 0.2212) 19.27%, rgba(71, 147, 129, 0.1343) 35.94%, rgba(165, 207, 187, 0.1027) 58.33%, rgba(255, 255, 255, 0) 83.85%);
+    background: linear-gradient(180deg, rgba(198, 226, 230, 0.6399) 1.57%, rgba(88, 151, 159, 0.2212) 19.27%,
+    rgba(71, 147, 129, 0.1343) 35.94%, rgba(165, 207, 187, 0.1027) 58.33%, rgba(255, 255, 255, 0) 83.85%);
 }
 
 .welcome-title-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 2.5em;
-    margin-top: 3.5em;
+    margin-bottom: 40px;
+    margin-top: 20px;
 }
 
 .welcome-title-container h2 {
-    margin-top: 3em;
-    padding: 0.6em 1.8em;
+    margin-top: 110px;
+    padding: 15px 53px;
     background: linear-gradient(0deg, rgba(170, 206, 155, 0.53), rgba(170, 206, 155, 0.53));
-    border: 0.2em solid #94a08f ;
-    border-radius: 1em;
+    border: 9px solid #94a08f ;
+    border-radius: 38px;
     font-size: 2.5rem;
     color: #373867;
 }
@@ -28,32 +29,34 @@
 }
 
 .first-section-img-and-text-container img {
-    max-width: 55%;
-    margin-bottom: 4em;
-    margin-right: 1em;
-    margin-left: 2em;  
+    max-width: 75%;
+    margin-bottom: 64px;
+    margin-right: 16px;
+    margin-left: 32px;
 }
 
 .first-section-img-and-text-container p {
     width: 80%;
-    margin-bottom: 4em;
+    margin-bottom: 64px;
     font-size: 1.3rem;
 }
 
 .line-division-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 6.4em;
+    margin-bottom: 102.4px;
+    margin-top: 102.4px;
 }
 
 .section-line-division {
     height: 1px;
     width: 60%;
     background-color: #000;
+    margin-top: 70px;
 }
 
 .application-features-container h2 {
-    margin-bottom: 5em;
+    margin-bottom: 80px;
     font-size: 1.5rem;
     font-weight: 700;
     color: #373867;
@@ -62,7 +65,7 @@
 
 .application-features-container article {
     display: flex;
-    margin-bottom: 4.5em;
+    margin-bottom: 72px;
 }
 
 .application-img-and-text-wraper {
@@ -71,11 +74,11 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-bottom: 1.5em;
+    margin-bottom: 24px;
 }
 
 .application-img-and-text-wraper h3 {
-    margin-bottom: 0.8em;
+    margin-bottom: 12.8px;
     color: #373867;
     font-size: 1.1rem;
     font-weight: 700;
@@ -87,10 +90,9 @@
 }
 
 .why-should-use-TG-container {
-    margin-top: 3.7em;
-    margin-bottom: 6.4em;
+    margin-top: 59.2px;
+    margin-bottom: 102.4px;
 }
-
 
 .why-use-TG-articles-wrap {
     display: flex;
@@ -110,17 +112,17 @@
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
-    height: 14em; 
+    height: 224px;
 }
 
 .use-trackgenix-text-container{
     margin: auto;
-    padding: 1em;
+    padding: 16px;
     width: 60%;
 }
 
 .use-trackgenix-text-container h3 {
-    margin-bottom: 1em;
+    margin-bottom: 16px;
     font-size: 1.3rem;
     font-weight: 700;
     color: #373867;
@@ -128,31 +130,29 @@
 
 .use-trackgenix-text-container p {
     font-size: 1rem;
-    font-weight: 400;
     color: #373867;
 }
 
 .Why-you-should-background {
     display: flex;
     justify-content: center;
-    transform: rotate(45deg);
-    width: 5.5em;
-    height: 5.5em;
-    margin-left: 1.5em;
+    width: 88px;
+    height: 88px;
+    margin-left: 24px;
     background: #AACE9B4D;
+    transform: rotate(45deg);
 }
 
 .why-use-TG-articles-wrap article img {
     width: 70%;
-    padding: 1.2em;
+    padding: 19.2px;
     transform: rotate(315deg);
 }
 
 .inscription-form-section h2 {
-    margin-left: 1.3em;
-    margin-bottom: 2em;
+    margin-left: 48px;
+    margin-bottom: 32px;
     font-size: 1.5rem;
-    font-weight: 400;
     text-decoration: underline;
 }
 
@@ -168,19 +168,19 @@
     text-align: center;
 }
 
-.inputs-container input, 
+.inputs-container input,
 .inputs-container select {
     width: 80%;
-    height: 2em;
-    margin-bottom: 2em;
-    border-radius: 0.3em;
+    height: 32px;
+    margin-bottom: 32px;
+    border-radius: 4.8px;
 }
 
 .checkbox-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 5.5em;
+    margin-top: 88px;
 }
 
 .human-tablet-pc-hidden {
@@ -195,8 +195,8 @@
 
 form h5 {
     visibility: hidden;
-    margin-top: 3em;
-    margin-left: 5em;
+    margin-top: 48px;
+    margin-left: 80px;
     font-size: 1rem;
     font-weight: 800;
 }
@@ -204,21 +204,21 @@ form h5 {
 .text-area-container {
     display: flex;
     justify-content: center;
-    margin-top: 1.7em;
+    margin-top: 27.2px;
 }
 
 .text-area-container textarea {
     width: 85%;
-    height: 24em;
-    border-radius: 0.25em;
+    height: 387px;
+    border-radius: 4px;
 }
 
 .button-container {
     display: flex;
     justify-content: end;
     width: 90%;
-    margin-top: 1.5em;
-    margin-bottom: 5em;
+    margin-top: 24px;
+    margin-bottom: 80px;
 }
 
 .button-container input {
@@ -227,7 +227,8 @@ form h5 {
 }
 
 .company-mission-section {
-    background: linear-gradient(180deg, rgba(198, 226, 230, 0.5925) 1.57%, rgba(88, 151, 159, 0.2212) 19.27%, rgba(71, 147, 129, 0.1343) 35.94%, rgba(165, 207, 187, 0.1027) 58.33%, rgba(255, 255, 255, 0) 83.85%);
+    background: linear-gradient(180deg, rgba(198, 226, 230, 0.5925) 1.57%, rgba(88, 151, 159, 0.2212) 19.27%,
+    rgba(71, 147, 129, 0.1343) 35.94%, rgba(165, 207, 187, 0.1027) 58.33%, rgba(255, 255, 255, 0) 83.85%);
 }
 
 .company-mission-wrap {
@@ -243,37 +244,37 @@ form h5 {
 .company-mission-title-container {
     display: flex;
     justify-content: center;
-    width: 100%; 
-    height: 2.3em;
-    margin-bottom: 1.8em;
+    width: 100%;
+    height: 36.8px;
+    margin-bottom: 28.8px;
     background-color:rgba(71, 74, 250, 0.24);
-    border-top-right-radius: 0.6em;
-    border-bottom-right-radius: 0.6em;
+    border-top-right-radius: 9.6px;
+    border-bottom-right-radius: 9.6px;
 }
 
 .company-mission-title-container h2 {
-    padding: 0.3em;
+    padding: 4.8px;
     font-size: 1.4rem;
     font-weight: 700;
 }
 
 .company-mission-section img {
-    width: 6em;
-    height: 7em;
-    margin-right: 0.5em;
+    width: 96px;
+    height: 112px;
+    margin-right: 8px;
 }
 
 .company-titles-container h3 {
-    margin-left: 0.2em;
-    color: #373867;   
+    margin-left: 3.2px;
+    color: #373867;
     font-size: 1.1rem;
     font-weight: 700;
     text-decoration: underline #8FD5C8;
 }
 
 .company-mission-make-time-ally h4 {
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
+    margin-top: 24px;
+    margin-bottom: 24px;
     font-size: 1rem;
     font-weight: 600;
     font-style: italic;
@@ -281,16 +282,15 @@ form h5 {
 }
 
 .company-mission-make-time-ally p {
-    margin-bottom: 1.3em;
+    margin-bottom: 20.8px;
     color: #1C1C37;
     font-size: 0.8rem;
-    font-weight: 400;
-    line-height: 1.6rem;
+    line-height: 25.6px;
     text-align: center;
 }
 
 .hear-they-say-us h3 {
-    margin-bottom: 2em;
+    margin-bottom: 32px;
     color: #373867;
     font-size: 1.25rem;
     font-weight: 600;
@@ -298,42 +298,39 @@ form h5 {
 }
 
 .hear-they-say-us p {
-    margin-right: 1em;
-    margin-right: 1em;
+    margin-right: 16px;
+    margin-right: 16px;
     font-size: 1rem;
     font-style: italic;
-    font-weight: 400;
     text-align: center;
 }
 
 .hear-they-say-us .stisfied-customer {
     text-align: right;
-    margin-top: 0.5em;
+    margin-top: 8px;
     font-weight: 500;
 }
 
 .about-us-section h3 {
-    margin-left: 1em;
-    margin-top: 2em;
-    margin-bottom: 1em;
+    margin-left: 16px;
+    margin-top: 32px;
+    margin-bottom: 16px;
     color: #373867;
     font-size: 1rem;
     font-weight: 700;
 }
 
 .about-us-section p {
-    padding: 1em;
+    padding: 16px;
     color: #373867;
     font-size: 1rem;
-    font-weight: 400;
     text-align: center;
 }
 
 .about-us-text-img-wrapper {
-    display: bock;
     justify-content: center;
     text-align: center;
-} 
+}
 
 .security-img-container {
     display: flex;
@@ -342,19 +339,18 @@ form h5 {
 }
 
 .our-products-section {
-    margin-bottom: 5em ;
+    margin-bottom: 80px;
 }
 
 .about-us-section img {
     max-width: 80%;
     width: max-content;
     height: 50%;
-    margin-bottom: 5em;
     text-align: center;
 }
 
 .our-products-section h2 {
-    margin-left: 3em;
+    margin-left: 48px;
     font-size: 1.5rem;
     font-weight: 700;
     text-decoration: underline;
@@ -362,9 +358,9 @@ form h5 {
 
 .our-products-section img {
     width: 80%;
-    height: 50%;
-    margin-top:1.5em ;
-    margin-bottom: 1.5em;
+    height: 40%;
+    margin-top: 24px;
+    margin-bottom: 24px;
 }
 
 .our-products-two-sections-wrapper {
@@ -375,12 +371,11 @@ form h5 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;   
 }
 
 .our-products-container h3 {
     width: 80%;
-    margin-bottom: 1.5em;
+    margin-bottom: 24px;
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
@@ -388,9 +383,8 @@ form h5 {
 
 .our-products-container p {
     width: 80%;
-    margin-bottom: 1.5em;
+    margin-bottom: 24px;
     font-size: 1rem;
-    font-weight: 400;
     text-align: center;
 }
 
@@ -403,27 +397,26 @@ form h5 {
 }
 
 .company-section {
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-    margin-bottom: 5em;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 
 .company-section article {
     display: block;
     justify-content: space-between;
-    margin-bottom: 4em;
+    margin-bottom: 64px;
 }
 
 .company-an-inclusive-wrap{
     display: block;
     justify-content: space-between;
-    margin-bottom: 4em;
+    margin-bottom: 64px;
     text-align: right;
 }
 
 .company-section h2 {
-    margin-left: 2em;
-    margin-bottom: 2em;
+    margin-left: 32px;
+    margin-bottom: 32px;
     font-size: 1.5rem;
     font-weight: 700;
     text-decoration: underline;
@@ -431,8 +424,8 @@ form h5 {
 
 .company-section img {
     width: 50%;
-    margin-bottom: 0.5em;
-    margin-right: 2em;
+    margin-bottom: 8px;
+    margin-right: 20px;
 }
 
 .company-an-inclusive-wrap img {
@@ -440,8 +433,8 @@ form h5 {
 }
 
 .company-section h3 {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
+    margin-top: 8px;
+    margin-bottom: 8px;
     font-size: 1rem;
     font-weight: 700;
     text-align: left;
@@ -449,7 +442,7 @@ form h5 {
 
 .company-an-inclusive-wrap h3 {
     text-align: right;
-    margin-right: 2em;
+    margin-right: 32px;
 }
 
 .support-img-text-container {
@@ -460,22 +453,22 @@ form h5 {
 .company-section p {
     flex-grow: 2;
     width: 90%;
-    margin-right: 1em;
-    margin-bottom: 2em;
+    margin-right: 16px;
+    margin-bottom: 16px;
     font-size: 0.85rem;
 }
 
 .support-section h2 {
-    margin-left: 3em;
-    margin-bottom: 2em;
+    margin-left: 48px;
+    margin-bottom: 32px;
     font-size: 2rem;
     text-decoration: underline;
 }
 
 .support-section img {
     width: 80%;
-    margin-left: 2rem;
-    margin-bottom: 1.5em;
+    margin-left: 32px;
+    margin-bottom: 24px;
 }
 
 .support-section p {
@@ -486,28 +479,28 @@ form h5 {
 
 .support-img-and-text-container {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 4em;
-    margin-right: 3rem;
+    margin-bottom: 64px;
+    margin-right: 48px;
     text-align: center;
 }
 
 .tutorial-section h2 {
-    margin-bottom: 1.4em;
+    margin-bottom: 24px;
     font-size: 1.8rem;
     font-weight: 700;
     font-style: italic;
 }
 
 .tutorials-list-container {
-    margin-left: 1em;
+    margin-left: 16px;
 }
 
 .tutorials-list-container ol {
-    margin: 0.5em;
-    margin-left: 1.8rem;
-    margin-right: 3rem;
+    margin: 8px;
+    margin-left: 29px;
+    margin-right: 48px;
     list-style: decimal;
     font-size: 1.2rem;
     font-weight: 700;
@@ -522,21 +515,21 @@ form h5 {
 }
 
 .tutorial-time {
-    margin-left: 0.5em;
+    margin-left: 8px;
     color: #1D22EC;
 }
 
 .tutorial-button {
     display: flex;
     justify-content: center;
-    margin-top: 4em;
-    margin-bottom: 5.5em;
+    margin-top: 64px;
+    margin-bottom: 88px;
 }
 
 .tutorial-button button {
-    padding: 1.8rem;
+    padding: 28.8px;
     background-color: #98220D;
-    border-radius: 1.4rem;
+    border-radius: 22px;
     border: none;
     font-size: 1.2rem;
     font-weight: 700;
@@ -564,7 +557,7 @@ form h5 {
 
     .name-email-input-container input {
         width: 50%;
-        margin-right: 0.5em;
+        margin-right: 8px;
     }
 
     .company-subtitle-wrapper {
@@ -574,10 +567,10 @@ form h5 {
     .company-titles-container .where-we-are-headed-underline {
         text-decoration: underline #000;
     }
-    
+
     .company-mission-make-time-ally {
-        margin-left: 1em;
-        margin-right: 1em;
+        margin-left: 16px;
+        margin-right: 16px;
     }
 
     .company-section article {
@@ -587,7 +580,6 @@ form h5 {
     .company-sections-wrap, .company-an-inclusive-wrap{
         display: flex;
     }
-
 }
 
 @media only screen and (min-width: 1200px) {
@@ -628,7 +620,7 @@ form h5 {
     }
 
     .support-section img {
-        width: 19em;
-        height: 12em;
-    }
+        width: 300px;
+        height: 190px
+}
 }
