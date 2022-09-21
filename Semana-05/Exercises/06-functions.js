@@ -7,7 +7,7 @@ console.log('\n-----Exercise 6-a-----');
 
 function sum(num1, num2){
     return num1 + num2;
-}
+};
 
 var result = sum(100, 50);
 
@@ -29,7 +29,7 @@ function sumValidateNumber(num1, num2){
         return NaN;
     }
     return sum(num1, num2);
-}
+};
 
 console.log('Check that the parameters are numbers:', sumValidateNumber(5, '10'), sumValidateNumber(8, 20));
 
@@ -40,7 +40,7 @@ console.log('\n-----Exercise 6-c-----');
 
 function validateInteger(num){
     return Number.isInteger(num);
-}
+};
 
 console.log('Check that the parameters are integers:', validateInteger(10.5), validateInteger(10));
 
@@ -66,7 +66,7 @@ function validateNumbersAndInteger (num1, num2){
         alert('Error, parameters must be numbers:'+ ' ' + num1 + ' , ' + num2);
         return NaN;
     }
-}
+};
 
 console.log('Validate that the parameters are numbers and integers in sum function:',
 validateNumbersAndInteger(5, 19.5), validateNumbersAndInteger(5, '12'));
@@ -86,12 +86,12 @@ function finalValitation(num){
         return Math.round(num);
     }
     return num;
-}
+};
 
 function finalSum(num1, num2){
     num1 = finalValitation(num1);
     num2 = finalValitation(num2);
     return num1 + num2;
-}
+};
 
 console.log('Final sum, validation in separate function:', finalSum(12.3, 8.2), finalSum(15.3, '20'));

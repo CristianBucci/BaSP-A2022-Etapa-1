@@ -9,7 +9,7 @@ var countries = ['argentina', 'brasil', 'uruguay', 'chile', 'peru'];
 
 for(var i = 0 ; i < countries.length; i++){
     alert(countries[i]);
-}
+};
 
 /*b. Al array anterior convertir la primera letra de cada palabra en mayúscula y mostrar una alerta por cada
 palabra modificada.*/
@@ -19,7 +19,7 @@ console.log('\n-----Exercise 5-b-----');
 for (var i = 0; i < countries.length; i++){
     var wordCapitalized = countries[i].substring(0, 1).toUpperCase() + countries[i].substring(1).toLowerCase();
     alert(wordCapitalized);
-}
+};
 
 /*c. Crear una variable llamada “sentence” que tenga un string vacío, luego al array del punto a) recorrerlo con
 un bucle for para ir guardando cada palabra dentro de la variable sentence. Al final mostrar una única alerta
@@ -31,7 +31,7 @@ var sentence = '';
 
 for (var i = 0; i < months.length; i++){
     sentence += months[i] + ' ';
-}
+};
 
 alert(sentence);
 
@@ -44,7 +44,7 @@ console.log('\n-----Exercise 5-d-----');
 var emptyArray = [];
 
 for(var i = 0; i < 10 ; i++){
-    emptyArray += [i]
-}
+    emptyArray += [i];
+};
 
-console.log(`Fill empty array with 0-9 numbers:`, emptyArray);
+console.log('Fill empty array with 0-9 numbers:', emptyArray);

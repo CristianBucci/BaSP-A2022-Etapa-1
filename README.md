@@ -1,7 +1,7 @@
 # *BaSP-A2022*/ TrackGenix 🚀
 ![enter image description here](https://raw.githubusercontent.com/CristianBucci/BaSP-A2022-Etapa-1/2a065bc7d2b47b5e2ff9c1c40d69a00809193fea/Semana-02/assets/img/trackgenix.png)
 ## Contents 📝
-  - [General info ℹ️](#general-info) 
+  - [General info ℹ️](#general-info)
   - [About US 👥](#about-us)
   - [What We Do? 💡](#what-we-do)
   - [Technologies ⛮](#technologies)
@@ -23,27 +23,27 @@
   - [Week14 📅](#week14)
   - [Week15 📅](#week15)
 
- ## General info  
+ ## General info
  ℹ️
- 
-  “TRACKGENIX”  is a revolutionary system designed for GigaTech Software Solutions SA. This system will allow them to 
+
+  “TRACKGENIX”  is a revolutionary system designed for GigaTech Software Solutions SA. This system will allow them to
   efficiently manage their proyects, schedule flow, selected work teams and much more.
 ## About US
-👥 
+👥
 
 RadiumRocket developed TrackGenix as a software solution for optimal time-tracking and project management as a request
  for one of its most trusted clients, GigaTech Software Solutions, in late 2021, and swiftly became one of the most
-  requested services in all of the million-dollar South American productivity industry. RadiumRocket are a group of 
-  passionate people fond of the latest cutting edge technologies in software development. They position ourselves at 
+  requested services in all of the million-dollar South American productivity industry. RadiumRocket are a group of
+  passionate people fond of the latest cutting edge technologies in software development. They position ourselves at
   your side through all the process of development being responsible and co-workers with you to successfully get your
    product moving.
-## What We Do? 
+## What We Do?
 💡
 
-Our mission is to allow workers all over the world to reach their full potential. Our goal is to bring more power to 
-start-ups through top-notch and user-friendly time-tracking web apps, easily accessible through any device. 
+Our mission is to allow workers all over the world to reach their full potential. Our goal is to bring more power to
+start-ups through top-notch and user-friendly time-tracking web apps, easily accessible through any device.
 We believe in integrity, honesty, passion for our client’s ideas and communication.
-## Technologies 
+## Technologies
 ⛮
 ```
 Project is created at the moment with:
@@ -59,7 +59,7 @@ Project is created at the moment with:
 
 To run this project, you must clone it from the remote repository on github.
 Link: https://github.com/CristianBucci/BaSP-A2022-Etapa-1.git
-## Status 
+## Status
 💹
 ```
 Page in progress, sorry for the inconvenience 👷 🚧
@@ -74,29 +74,29 @@ Page in progress, sorry for the inconvenience 👷 🚧
  - [x] *Plan the necessary screens*
  - [x] *Make all the screens and functionalities to fulfill the indicated role*
  - [x] *Do it only for desktop version*
- - [x] *Work as a team to achieve the result* 
-## Week2  
+ - [x] *Work as a team to achieve the result*
+## Week2
 📅
-### HTML structure of landing page.  
+### HTML structure of landing page.
 #### Tasks:
  - [x] *Create the local and remote repositories*
  - [x] *Define the scaffolding of the project*
  - [x] *Make the HTML structure of the landing page*
  - [x] *Use git to save our progress to the repositories*
- - [x] *Do this README*  
- - [x] *Be participative in the course group* 
- 
-## Week3 
-📅 
+ - [x] *Do this README*
+ - [x] *Be participative in the course group*
+
+## Week3
+📅
 ### Add style with css, pixel-perfect.
 ### Tasks:
  - [x] *Create folder structure for css*
  - [x] *Add styles to the HTML based on the landing page*
  - [x] *Do it with the pixel-perfect methodology*
  - [x] *Use git to save our progress to the repositories*
- - [x] *Update this README*  
+ - [x] *Update this README*
  - [x] *Be participative in the course group*
-## Week4  
+## Week4
 📅
 ### Add style with css, flex-box.
 ### Tasks:
@@ -104,53 +104,52 @@ Page in progress, sorry for the inconvenience 👷 🚧
  - [x] *Add styles to the HTML based on the landing page*
  - [x] *Do it with the flex-box methodology*
  - [x] *Use git to save our progress to the repositories*
- - [x] *Update this README*  
+ - [x] *Update this README*
  - [x] *Be participative in the course group*
  - [x] *Made the link in Github-Pages*
  - [x] *Here is the link of Github-Pages repository: https://cristianbucci.github.io/BaSP-A2022-Etapa-1/Semana-04/index.html*
-  
-## Week5  
+
+## Week5
 📅
 ### Excercises with JavaScript.
 ### Tasks:
  - [x] *Create new folder Exercise for JS in week-05*
- - [x] *Create a JS file for each exercise* 
+ - [x] *Create a JS file for each exercise*
  - [x] *Do the exercises applying what we learned about JS*
  - [x] *Follow good practices*
  - [x] *Make commits and push for each exercise*
- - [x] *Update this README*  
+ - [x] *Update this README*
  - [x] *Be participative in the course group*
  - [x] *Made the link in Github-Pages for week 05*
  - [x] *Here is the link of Github-Pages repository: https://cristianbucci.github.io/BaSP-A2022-Etapa-1/Semana-05/index.html*
-  
-#### This week's information will be completed soon.
-## Week6  
+
+## Week6
 📅
 #### This week's information will be completed soon.
-## Week7  
+## Week7
 📅
 #### This week's information will be completed soon.
-## Week8  
+## Week8
 📅
 #### This week's information will be completed soon.
-## Week9  
+## Week9
 📅
 #### This week's information will be completed soon.
-## Week10 
+## Week10
 📅
 #### This week's information will be completed soon.
-## Week11 
+## Week11
 📅
 #### This week's information will be completed soon.
-## Week12 
+## Week12
 📅
 #### This week's information will be completed soon.
-## Week13 
+## Week13
 📅
 #### This week's information will be completed soon.
-## Week14 
+## Week14
 📅
 #### This week's information will be completed soon.
-## Week15 
+## Week15
 📅
 #### This week's information will be completed soon.

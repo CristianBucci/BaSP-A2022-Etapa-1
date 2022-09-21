@@ -58,7 +58,7 @@ el operador +).*/
 
 console.log('\n-----Exercise 2-f-----');
 
-var tool ='multifunction screwdriver' ;
+var tool ='multifunction screwdriver';
 var toolFirstWordCapitalize = tool.substring(0, 1).toUpperCase() + tool.substring(1, tool.indexOf(' ')).toLowerCase();
 var toolSecondWordCapitalize = tool.substring(tool.indexOf(' ') + 1, tool.indexOf(' ') +2).toUpperCase() +
 tool.substring(tool.indexOf(' ') + 2).toLowerCase();
