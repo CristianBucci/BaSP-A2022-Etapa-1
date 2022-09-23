@@ -125,7 +125,22 @@ Page in progress, sorry for the inconvenience 👷 🚧
 
 ## Week6
 📅
-#### This week's information will be completed soon.
+### Sign in, sign up with JavaScript.
+### Tasks:
+ - [x] *Create new folders; views and javascript in Semana-06*
+ - [x] *Create a Html file for log in and other for sign in*
+ - [x] *Create a JS file for log and other for sing in*
+ - [x] *Complete the acceptance criteria*
+ - [x] *Make the layouts for each of the views*
+ - [x] *Make the validations of the required fields in 'sign in' and in 'sign up'*
+ - [x] *Follow good practices*
+ - [x] *Use git to save our progress to the repositories*
+ - [x] *Update this README*
+ - [x] *Be participative in the course group*
+ - [x] *Made the link in Github-Pages for week 06*
+ - [x] *Here is the link of Github-Pages repository: https://cristianbucci.github.io/BaSP-A2022-Etapa-1/Semana-06/index.html*
+
+
 ## Week7
 📅
 #### This week's information will be completed soon.
