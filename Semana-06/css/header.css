@@ -19,7 +19,7 @@ header {
     color: #46a07b;
 }
 
-.login {
+.home-login-signin {
     margin-right: 15px;
     font-weight: bold;
     color: #46a07b;
@@ -71,10 +71,6 @@ nav {
 
     .header-container {
         margin-bottom: 0;
-    }
-
-    .login {
-        visibility: hidden;
     }
 
     main {
