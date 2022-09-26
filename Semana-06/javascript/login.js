@@ -10,13 +10,20 @@ window.onload = function() {
 
         e.preventDefault();
 
-        if(!formInputEmail.value.match(emailExpression)) {
+        if(formInputEmail.value === ''){
+            formInputEmail.classList.add("border-red");
+            var inputError = document.createElement("p");
+            inputError.classList.add("input-par");
+            inputError.innerHTML = "Required field!!";
+            formInputEmail.parentNode.insertBefore(inputError,  formInputEmail.nextSibling);
+        }else if(!formInputEmail.value.match(emailExpression)) {
             formInputEmail.classList.add("border-red");
             var inputError = document.createElement("p");
             inputError.classList.add("input-par");
             inputError.innerHTML = "Ingrese un email valido!!";
             formInputEmail.parentNode.insertBefore(inputError,  formInputEmail.nextSibling);
-        }else{
+        }
+        else{
             formInputEmail.classList.add("border-green");
         };
     };
@@ -36,7 +43,7 @@ window.onload = function() {
 
         e.preventDefault();
 
-        inputValue = (formInputPassword.value).toLowerCase();
+        var inputValue = (formInputPassword.value).toLowerCase();
         for(var i = 0; i < inputValue.length;i++) {
             if((inputValue.charCodeAt(i) >= 97) && (inputValue.charCodeAt(i) <= 122)) {
                 inputValidation = true;
@@ -49,8 +56,13 @@ window.onload = function() {
                 break
             };
         };
-
-        if( !inputValidation || formInputPassword.value == "" ) {
+        if(formInputPassword.value === ''){
+            formInputPassword.classList.add("border-red");
+            var inputError = document.createElement("p");
+            inputError.classList.add("input-par-pass");
+            inputError.innerHTML = "Required field!!";
+            formInputPassword.parentNode.insertBefore(inputError,  formInputPassword.nextSibling);
+        }else if( !inputValidation || formInputPassword.value == "" ) {
             formInputPassword.classList.add("border-red");
             var inputErrorPassword = document.createElement("p");
             inputErrorPassword.classList.add("input-par-pass");

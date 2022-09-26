@@ -9,14 +9,14 @@ main article {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 350px;
+    height: 400px;
     width: 250px;
     padding-top: 50px;
     border-radius: 10px;
     background-color: #c5c5c5;
 }
 
-main article h1 {
+main article h2 {
     font-size: 1.5rem;
     font-weight: bold;
     color: #373867;
@@ -26,6 +26,7 @@ main article form {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 400px;
 }
 
 .inputs-container {
@@ -44,9 +45,9 @@ main article form {
 }
 
 form button {
-    width: 100%;
+    width: 60%;
     height: 35px;
-    margin-top: 24px;
+    margin: auto;
     background-color:#373867;
     color: #46a07b;
     font-size: 1rem;
@@ -56,6 +57,7 @@ form button {
 
 form a {
     margin-top: 10px;
+    padding: 10px;
     font-size: 1rem;
     font-weight: bold;
     text-align: right;
@@ -69,7 +71,17 @@ form a {
     border-bottom: 1px solid rgb(255, 1, 1);
 }
 
-p {
+main p {
+    padding: 5px;
     font-size: 0.8rem;
     color: rgb(255, 1, 1);
+}
+
+@media only screen and (min-width: 768px) {
+    main {
+        margin-left:min(30%, 320px);
+    }
+    .hamb-menu {
+        visibility: hidden;
+    }
 }

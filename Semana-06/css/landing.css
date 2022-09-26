@@ -542,6 +542,10 @@ form h5 {
         margin-left:min(30%, 320px);
     }
 
+    .hamb-menu {
+        visibility: hidden;
+    }
+
     form h5 {
         visibility: visible;
     }
