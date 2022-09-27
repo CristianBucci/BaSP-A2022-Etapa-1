@@ -7,43 +7,43 @@ window.onload = function() {
     var inputValidation;
 
     formInputEmail.onblur = function(e) {
-
         e.preventDefault();
 
-        if(formInputEmail.value === ''){
+        if(formInputEmail.value === '') {
             formInputEmail.classList.add("border-red");
             var inputError = document.createElement("p");
             inputError.classList.add("input-par");
             inputError.innerHTML = "Required field!!";
             formInputEmail.parentNode.insertBefore(inputError,  formInputEmail.nextSibling);
-        }else if(!formInputEmail.value.match(emailExpression)) {
+        }
+        else if(!formInputEmail.value.match(emailExpression)) {
             formInputEmail.classList.add("border-red");
             var inputError = document.createElement("p");
             inputError.classList.add("input-par");
-            inputError.innerHTML = "Ingrese un email valido!!";
+            inputError.innerHTML = "Invalid email!!";
             formInputEmail.parentNode.insertBefore(inputError,  formInputEmail.nextSibling);
         }
-        else{
+        else {
             formInputEmail.classList.add("border-green");
         };
     };
 
     formInputEmail.onfocus = function(e) {
-
         e.preventDefault();
 
         formInputEmail.value = '';
         formInputEmail.classList.remove("border-red");
+
         if(document.querySelector(".input-par")) {
             document.querySelector(".input-par").remove();
         };
     };
 
     formInputPassword.onblur = function(e) {
-
         e.preventDefault();
 
         var inputValue = (formInputPassword.value).toLowerCase();
+
         for(var i = 0; i < inputValue.length;i++) {
             if((inputValue.charCodeAt(i) >= 97) && (inputValue.charCodeAt(i) <= 122)) {
                 inputValidation = true;
@@ -56,7 +56,8 @@ window.onload = function() {
                 break
             };
         };
-        if(formInputPassword.value === ''){
+
+        if(formInputPassword.value === '') {
             formInputPassword.classList.add("border-red");
             var inputError = document.createElement("p");
             inputError.classList.add("input-par-pass");
@@ -66,7 +67,7 @@ window.onload = function() {
             formInputPassword.classList.add("border-red");
             var inputErrorPassword = document.createElement("p");
             inputErrorPassword.classList.add("input-par-pass");
-            inputErrorPassword.innerHTML = "Ingrese una contraseña valida (a-z, 0-9)!!";
+            inputErrorPassword.innerHTML = "Enter a valid password (a-z, 0-9)!!";
             formInputPassword.parentNode.insertBefore(inputErrorPassword, formInputPassword.nextSibling);
         }else {
             formInputPassword.classList.add("border-green");
@@ -74,7 +75,6 @@ window.onload = function() {
     };
 
     formInputPassword.onfocus = function(e) {
-
         e.preventDefault;
 
         formInputPassword.value = '';
@@ -85,7 +85,6 @@ window.onload = function() {
     };
 
     buttonLogin.onclick = function (e) {
-
         e.preventDefault();
 
         var invalidEmail = 'Invalid email:';
