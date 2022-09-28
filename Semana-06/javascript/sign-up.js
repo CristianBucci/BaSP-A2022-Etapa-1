@@ -17,7 +17,7 @@ window.onload = function() {
     var letterValidation;
     var numberValidation;
     var letterSpaceNumberValidation;
-    
+
     var onespace = function (input) {
         var arrayCharacters = input.split('');
         for(var i=0; i < arrayCharacters.length; i++) {
