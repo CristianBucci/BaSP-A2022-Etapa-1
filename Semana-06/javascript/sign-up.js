@@ -16,10 +16,11 @@ window.onload = function() {
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
     var letterValidation;
     var numberValidation;
-
-    var onespace = function (txt) {
-        var arrayCharacters = txt.split('');
-        for(var i=0; i<arrayCharacters.length; i++) {
+    var letterSpaceNumberValidation;
+    
+    var onespace = function (input) {
+        var arrayCharacters = input.split('');
+        for(var i=0; i < arrayCharacters.length; i++) {
             if (arrayCharacters[i] == " ") {
                 if (arrayCharacters[0] == " ") {
                     return false;
@@ -42,7 +43,7 @@ window.onload = function() {
                 letterValidation = true;
             }
             else if((inputValue.charCodeAt(i) === 241)) {
-                adressValidate = true;
+                letterValidation = true;
             }
             else if((inputValue.charCodeAt(i) === 209)) {
                 letterValidation = true;
@@ -54,31 +55,39 @@ window.onload = function() {
         };
     };
 
-    var validateLettersAndSpace = function(input) {
-        var inputValue = (input.value.toLowerCase());
-        for(var i = 0; i < inputValue.length; i++) {
-            if((inputValue.charCodeAt(i) >= 97) && (inputValue.charCodeAt(i) <= 122)) {
-                letterValidation = true;
-            }else if((inputValue.charCodeAt(i) === 241)) {
-                letterValidation = true;
-            }else if((inputValue.charCodeAt(i) === 209)) {
-                letterValidation = true;
-            }else if((inputValue.charCodeAt(i) === 32)) {
-                letterValidation = true;
-            }else {
-                letterValidation = false;
-                break;
-            };
-        };
-    };
-
     var validateNumber = function(input) {
         var inputValue = (input.value.toLowerCase());
         for(var i = 0; i < inputValue.length; i++) {
             if((inputValue.charCodeAt(i) >= 48) && (inputValue.charCodeAt(i) <= 57)) {
                 numberValidation = true;
-            }else {
+            }
+            else {
                 numberValidation = false;
+                break;
+            };
+        };
+    };
+
+    var validateLetterSpaceNumber = function(input) {
+        var inputValue = (input.value.toLowerCase());
+        for(var i = 0; i < inputValue.length; i++) {
+            if((inputValue.charCodeAt(i) >= 97) && (inputValue.charCodeAt(i) <= 122)) {
+                letterSpaceNumberValidation = true;
+            }
+            else if((inputValue.charCodeAt(i) === 241)) {
+                letterSpaceNumberValidation = true;
+            }
+            else if((inputValue.charCodeAt(i) === 209)) {
+                letterSpaceNumberValidation = true;
+            }
+            else if((inputValue.charCodeAt(i) === 32)) {
+                letterSpaceNumberValidation = true;
+            }
+            else if((inputValue.charCodeAt(i) >= 48) && (inputValue.charCodeAt(i) <= 57)) {
+                letterSpaceNumberValidation = true;
+            }
+            else {
+                letterSpaceNumberValidation = false;
                 break;
             };
         };
@@ -108,10 +117,12 @@ window.onload = function() {
     };
 
     var removeBorder = function(input){
-        input.value = '';
-        input.classList.remove("border-red");
-        if(document.querySelector(".input-" + input.name)) {
-            document.querySelector(".input-" + input.name).remove();
+        if(input.classList.contains("border-red")){
+            input.value = '';
+            input.classList.remove("border-red");
+            if(document.querySelector(".input-" + input.name)) {
+                document.querySelector(".input-" + input.name).remove();
+            };
         };
     };
 
@@ -191,9 +202,9 @@ window.onload = function() {
     };
 
     adress.onblur = function() {
-        validateLettersAndSpace(adress);
+        validateLetterSpaceNumber(adress);
         if(!requiredField(adress)) {
-            if(!letterValidation || adress.value.length < 5 || !onespace(adress.value)) {
+            if(!letterSpaceNumberValidation || adress.value.length < 5 || !onespace(adress.value)) {
                 addRedBorder(adress);
             }
             else {
@@ -207,9 +218,9 @@ window.onload = function() {
     };
 
     location.onblur = function() {
-        validateLettersAndSpace(location);
+        validateLetterSpaceNumber(location);
         if(!requiredField(location)) {
-            if(!letterValidation || location.value.length < 3 || !onespace(location.value)) {
+            if(!letterSpaceNumberValidation || location.value.length < 3 || !onespace(location.value)) {
                 addRedBorder(location);
             }
             else {
@@ -222,9 +233,33 @@ window.onload = function() {
         removeBorder(location);
     };
 
+    postalCode.onblur = function() {
+        validateNumber(postalCode);
+        if(!requiredField(postalCode)) {
+            if(!numberValidation || postalCode.value.length < 4 || postalCode.value.length > 5) {
+                addRedBorder(postalCode);
+            }
+            else {
+                addGreenBorder(postalCode);
+            };
+        };
+    };
+
+    postalCode.onfocus = function() {
+        removeBorder(postalCode);
+    };
+
+
     email.onblur = function(e) {
         e.preventDefault();
-        if(!email.value.match(emailExpression)) {
+        if(email.value === ''){
+            email.classList.add("border-red");
+            var inputError = document.createElement("p");
+            inputError.classList.add("input-par");
+            inputError.innerHTML = "Required field!!";
+            email.parentNode.insertBefore(inputError,  email.nextSibling);
+        }
+        else if(!email.value.match(emailExpression)) {
             email.classList.add("border-red");
             var inputError = document.createElement("p");
             inputError.classList.add("input-par");
@@ -237,11 +272,12 @@ window.onload = function() {
 
     email.onfocus = function(e) {
         e.preventDefault();
-        if(email.value);
-        email.value = '';
-        email.classList.remove("border-red");
-        if(document.querySelector(".input-par")) {
-            document.querySelector(".input-par").remove();
+        if(email.classList.contains("border-red")){
+            email.value = '';
+            email.classList.remove("border-red");
+            if(document.querySelector(".input-par")) {
+                document.querySelector(".input-par").remove();
+            };
         };
     };
 
@@ -302,14 +338,15 @@ window.onload = function() {
                     invalidValue += '\n' + 'Invalid value ' + inputs[i].value  + ' in ' + inputs[i].name + ' - ';
                 };
             }else {
-                validValue += '\n' + ' "' + inputs[i].value  + '"' + ' in ' + inputs[i].name + ' - ';
+                validValue += '\n' + ' "' + inputs[i].name  + '"' + ' : ' + inputs[i].value + ' - ';
             };
         };
         var validationArr = validValue.split('-');
-        if(validationArr.length !== 14){
-            return alert('Error' + ' values ' + invalidValue);
+        if(validationArr.length !== 16){
+            console.log(validationArr);
+            alert('Error' + ' values ' + invalidValue);
         }else{
-            return alert('Succes' + ' ' + validValue);
+            alert('Succes' + ' ' + validValue);
         };
     };
 };

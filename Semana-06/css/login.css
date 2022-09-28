@@ -38,10 +38,12 @@ main article form {
 
 .inputs {
     width: 200px;
+    height: 25px;
     margin-top: 40px;
     border: none;
     outline: none;
     border-bottom: 1px solid #000;
+    border-radius: 6px;
 }
 
 form button {
@@ -61,6 +63,7 @@ form a {
     font-size: 1rem;
     font-weight: bold;
     text-align: right;
+    color: #46a07b;
 }
 
 .border-green {
@@ -80,8 +83,6 @@ main p {
 @media only screen and (min-width: 768px) {
     main {
         margin-left:min(30%, 320px);
-    }
-    .hamb-menu {
-        visibility: hidden;
+        height:900px;
     }
 }

@@ -6,8 +6,7 @@ window.onload = function() {
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
     var inputValidation;
 
-    formInputEmail.onblur = function(e) {
-        e.preventDefault();
+    formInputEmail.onblur = function() {
 
         if(formInputEmail.value === '') {
             formInputEmail.classList.add("border-red");
@@ -28,8 +27,7 @@ window.onload = function() {
         };
     };
 
-    formInputEmail.onfocus = function(e) {
-        e.preventDefault();
+    formInputEmail.onfocus = function() {
 
         formInputEmail.value = '';
         formInputEmail.classList.remove("border-red");
@@ -39,8 +37,7 @@ window.onload = function() {
         };
     };
 
-    formInputPassword.onblur = function(e) {
-        e.preventDefault();
+    formInputPassword.onblur = function() {
 
         var inputValue = (formInputPassword.value).toLowerCase();
 
@@ -63,19 +60,20 @@ window.onload = function() {
             inputError.classList.add("input-par-pass");
             inputError.innerHTML = "Required field!!";
             formInputPassword.parentNode.insertBefore(inputError,  formInputPassword.nextSibling);
-        }else if( !inputValidation || formInputPassword.value == "" ) {
+        }
+        else if(!inputValidation || formInputPassword.value === "" || formInputPassword.value.length < 8) {
             formInputPassword.classList.add("border-red");
             var inputErrorPassword = document.createElement("p");
             inputErrorPassword.classList.add("input-par-pass");
-            inputErrorPassword.innerHTML = "Enter a valid password (a-z, 0-9)!!";
+            inputErrorPassword.innerHTML = "Enter a valid password!!";
             formInputPassword.parentNode.insertBefore(inputErrorPassword, formInputPassword.nextSibling);
-        }else {
+        }
+        else {
             formInputPassword.classList.add("border-green");
         };
     };
 
-    formInputPassword.onfocus = function(e) {
-        e.preventDefault;
+    formInputPassword.onfocus = function() {
 
         formInputPassword.value = '';
         formInputPassword.classList.remove("border-red");
@@ -85,6 +83,7 @@ window.onload = function() {
     };
 
     buttonLogin.onclick = function (e) {
+
         e.preventDefault();
 
         var invalidEmail = 'Invalid email:';
@@ -116,6 +115,3 @@ window.onload = function() {
         };
     };
 };
-
-
-

@@ -11,14 +11,15 @@ main form {
     align-items: center;
     width: 80%;
     height: 600px;
+    margin-top: 60px;
     padding-top: 20px;
     border-radius: 10px;
     background-color: #c5c5c5;
 }
 
 main form h2 {
-    margin-top: 30px;
     font-size: 1.5rem;
+    margin-bottom: 20px;
     font-weight: bold;
     color: #373867;
 }
@@ -51,6 +52,7 @@ main form h2 {
     margin-top: 5px;
     border: none;
     border-bottom: 1px solid #000;
+    border-radius: 6px;
     outline: none;
 }
 

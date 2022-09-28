@@ -138,7 +138,7 @@ Page in progress, sorry for the inconvenience 👷 🚧
  - [x] *Update this README*
  - [x] *Be participative in the course group*
  - [x] *Made the link in Github-Pages for week 06*
- - [x] *Here is the link of Github-Pages repository: https://cristianbucci.github.io/BaSP-A2022-Etapa-1/Semana-06/index.html*
+ - [x] *Here is the link of Github-Pages repository: https://cristianbucci.github.io/BaSP-A2022-Etapa-1/Semana-06/views/home.html*
 
 
 ## Week7

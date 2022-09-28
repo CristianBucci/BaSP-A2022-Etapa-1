@@ -11,22 +11,26 @@
 		<title>
 			Trackgenix-Home
 		</title>
-		<link rel="stylesheet" href="/css/reset.css">
-		<link rel="stylesheet" href="/css/styles.css">
-		<link rel="stylesheet" href="/css/header.css">
-		<link rel="stylesheet" href="/css/aside.css">
-		<link rel="stylesheet" href="/css/landing.css">
-		<link rel="stylesheet" href="/css/footer.css">
+		<link rel="stylesheet" href="../css/reset.css">
+		<link rel="stylesheet" href="../css/styles.css">
+		<link rel="stylesheet" href="../css/header.css">
+		<link rel="stylesheet" href="../css/aside.css">
+		<link rel="stylesheet" href="../css/landing.css">
+		<link rel="stylesheet" href="../css/footer.css">
+		<link rel="stylesheet" href="../css/contact.css">
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+		<script src="../javascript/contact.js"></script>
 	</head>
 	<body>
 		<header>
 				<div class="header-container">
-					<img src="/assets/img/radium-rocket-logo-img.png" alt="radium-rocket-logo-img">
+					<img src="../assets/img/radium-rocket-logo-img.png" alt="radium-rocket-logo-img">
 					<h1>
 						TRACKGENIX
 					</h1>
-					<img src="/assets/img/rasp-menu-hamb.png" alt="hamburguer-menu-img" class="hamb-menu">
+					<a href="../views/login.html" class="home-login-link">
+						Login
+					</a>
 				</div>
 				<nav class="navbar-container">
 					<ul>
@@ -85,17 +89,17 @@
 				</h4>
 				<ul>
 					<li>
-						<a href="/views/home.html">
+						<a href="../views/home.html">
 							Home
 						</a>
 					</li>
 					<li>
-						<a href="/views/sign-up.html">
+						<a href="../views/sign-up.html">
 							Sign up
 						</a>
 					</li>
 					<li>
-						<a href="/views/login.html">
+						<a href="../views/login.html">
 							Login
 						</a>
 					</li>
@@ -106,7 +110,7 @@
 					</li>
 				</ul>
 				<div class="aside-img-and-copyright-wrap">
-					<img src="/assets/img/radium-rocket-logo-img.png"
+					<img src="../assets/img/radium-rocket-logo-img.png"
 					alt="radium-rocket-logo-img">
 					<p>
 						Developed by GigaTech Software Solutions S.A
@@ -121,7 +125,7 @@
 					</h2>
 				</div>
 				<article class="first-section-img-and-text-container">
-						<img src="/assets/img/landing-section-img.png"
+						<img src="../assets/img/landing-section-img.png"
 						alt="first-section-img"/>
 						<p class="welcome-section-text">
 							Welcome to “TRACKGENIX” is a revolutionary system designed for GigaTech Software
@@ -143,13 +147,13 @@
 							Hours Log
 						</h3>
 						<img
-						src="/assets/img/hours-log-img.png" alt="hours-log-img"/>
+						src="../assets/img/hours-log-img.png" alt="hours-log-img"/>
 					</div>
 					<div class="application-img-and-text-wraper">
 						<h3>
 							Reports
 						</h3>
-						<img src="/assets/img/reports-img.png" alt="reports-img"/>
+						<img src="../assets/img/reports-img.png" alt="reports-img"/>
 					</div>
 				</article>
 				<article>
@@ -157,14 +161,14 @@
 						<h3>
 							Resource Management
 						</h3>
-						<img src="/assets/img/resource-management-img.png"
+						<img src="../assets/img/resource-management-img.png"
 						alt="resource-management-img"/>
 					</div>
 					<div class="application-img-and-text-wraper">
 						<h3>
 							Multiple Roles
 						</h3>
-						<img src="/assets/img/multiple-roles-img.png" alt="multiple-roles-img"/>
+						<img src="../assets/img/multiple-roles-img.png" alt="multiple-roles-img"/>
 					</div>
 				</article>
 			</section>
@@ -187,7 +191,7 @@
 							</p>
 						</div>
 						<div class="Why-you-should-background">
-							<img src= "/assets/img/productivity-booster.png" alt="productivity-booster-img"/>
+							<img src= "../assets/img/productivity-booster.png" alt="productivity-booster-img"/>
 						</div>
 					</article>
 					<article>
@@ -201,7 +205,7 @@
 							<div class="background-work-traceability"></div>
 						</div>
 						<div class="Why-you-should-background">
-							<img src="/assets/img/work-traceanility.png"
+							<img src="../assets/img/work-traceanility.png"
 							alt="work-traceability-img"/>
 						</div>
 					</article>
@@ -220,7 +224,7 @@
 						</p>
 						</div>
 						<div class="Why-you-should-background">
-							<img src="/assets/img/leadership-management.png"
+							<img src="../assets/img/leadership-management.png"
 							alt="leadership-management-img"/>
 						</div>
 					</article>
@@ -234,7 +238,7 @@
 							</p>
 						</div>
 						<div class="Why-you-should-background">
-							<img src="/assets/img/decision-making.png"
+							<img src="../assets/img/decision-making.png"
 							alt="decision-making-img"/>
 						</div>
 					</article>
@@ -250,12 +254,18 @@
 				<form>
 					<div class="inputs-container">
 						<div class="name-email-input-container">
-							<input
-							type="text" name="name" placeholder="Name"/>
-							<input
-							type="text" name="email" placeholder="Email"/>
+							<div class="input-p-container">
+								<input
+								type="text" name="name" placeholder="Name"
+								class="input" id="input-name"/>
+							</div>
+							<div class="input-p-container">
+								<input
+								type="text" name="email" placeholder="Email" class="input"
+								id="input-email"/>
+							</div>
 						</div>
-							<select>
+							<select id="form-select" class="input" name="contact-area">
 							<option hidden selected id=>
 								-Choose Contact Area-
 							</option>
@@ -283,11 +293,13 @@
 						Text
 					</h5>
 					<div class="text-area-container">
-						<textarea name="textarea" placeholder="Enter your text here..."></textarea>
+						<textarea name="textarea" id="text-area" class="input"
+						placeholder="Enter your text here..."></textarea>
 					</div>
 					<div class="button-container">
-						<input
-						type="submit" name="submit" value="Submit">
+						<button type="submit" name="submit" value="Submit" id="submit-button">
+							Submit
+						</button>
 					</div>
 				</form>
 			</section>
@@ -312,7 +324,7 @@
 						</div>
 					</div>
 					</div>
-					<img src="/assets/img/radium-rocket-logo-img.png" alt="company-mission-RR-logo"
+					<img src="../assets/img/radium-rocket-logo-img.png" alt="company-mission-RR-logo"
 					class="company-mission-radium-rocket-logo">
 				</article>
 				<article class="company-mission-make-time-ally">
@@ -353,7 +365,7 @@
 							responsible and co-workers with you to successfully get your product moving.
 						</p>
 						<div class="security-img-container">
-							<img src="/assets/img/security-about-us-img.png" alt="security-img">
+							<img src="../assets/img/security-about-us-img.png" alt="security-img">
 						</div>
 					</div>
 				</article>
@@ -367,7 +379,7 @@
 				</h2>
 				<div class="our-products-two-sections-wrapper">
 					<article class="our-products-container">
-						<img src="/assets/img/employee-time-control-img.png" alt="employee-time-control-img">
+						<img src="../assets/img/employee-time-control-img.png" alt="employee-time-control-img">
 						<h3>
 							Employee time control from any place and device
 						</h3>
@@ -391,7 +403,7 @@
 						</ul>
 					</article>
 					<article class="our-products-container">
-						<img src="/assets/img/customized-working-img.png" alt="customized-working-img">
+						<img src="../assets/img/customized-working-img.png" alt="customized-working-img">
 						<h3>
 							Customized working day registration policies
 						</h3>
@@ -414,7 +426,7 @@
 				</div>
 				<div class="our-products-two-sections-wrapper">
 					<article class="our-products-container">
-						<img src="/assets/img/most-intuitive-img.png" alt="intuitive-time-control-img">
+						<img src="../assets/img/most-intuitive-img.png" alt="intuitive-time-control-img">
 						<h3>
 							The most intuitive time	control app
 						</h3>
@@ -435,7 +447,7 @@
 					</ul>
 					</article>
 					<article class="our-products-container">
-						<img src="/assets/img/project-management-img.png" alt="project-management-img">
+						<img src="../assets/img/project-management-img.png" alt="project-management-img">
 						<h3>
 							Project Management Done	Well
 						</h3>
@@ -461,7 +473,7 @@
 						Company
 					</h2>
 					<article>
-						<img src="/assets/img/gigatech-building-img.png" alt="gigatech-building-img">
+						<img src="../assets/img/gigatech-building-img.png" alt="gigatech-building-img">
 						<div class="company-txt-wrap">
 							<h3>
 								GigaTech Software Solutions SA building.
@@ -473,7 +485,7 @@
 						</div>
 					</article>
 					<article class="company-an-inclusive-wrap">
-						<img src="/assets/img/inclusive-workplace-img.png"
+						<img src="../assets/img/inclusive-workplace-img.png"
 						alt="inclusive-workplace-img">
 						<div class="company-txt-wrap">
 							<h3>
@@ -487,7 +499,7 @@
 						</div>
 					</article>
 					<article>
-						<img src="/assets/img/our-workplace-img.png" alt="our-workplace-img">
+						<img src="../assets/img/our-workplace-img.png" alt="our-workplace-img">
 						<div class="company-text-wrap">
 							<h3>
 								Our workplace, our world
@@ -510,7 +522,7 @@
 					</h2>
 					<div class="support-img-text-container">
 						<article class="support-img-and-text-container">
-							<img src="/assets/img/phone-call-img.png"
+							<img src="../assets/img/phone-call-img.png"
 							alt="phone-call-img">
 							<p>
 								Phone call or Video conference support
@@ -518,7 +530,7 @@
 							</p>
 						</article>
 						<article class="support-img-and-text-container">
-							<img src="/assets/img/software-support-img.png" alt="software-support-img">
+							<img src="../assets/img/software-support-img.png" alt="software-support-img">
 							<p>
 								24h support by online chat-bot
 							</p>
@@ -578,22 +590,22 @@
 			<ul>
 				<li>
 					<a href="https://www.facebook.com/">
-						<img src="/assets/img/facebook-footer-icon.png" alt="facebook-footer-icon">
+						<img src="../assets/img/facebook-footer-icon.png" alt="facebook-footer-icon">
 					</a>
 				</li>
 				<li>
 					<a href="https://twitter.com/">
-						<img src="/assets/img/twitter-footer-icon.png" alt="twitter-footer-icon">
+						<img src="../assets/img/twitter-footer-icon.png" alt="twitter-footer-icon">
 					</a>
 				</li>
 				<li>
 					<a href="https://www.instagram.com/">
-						<img src="/assets/img/instagram-footer-icon.png" alt="instagram-footer-icon">
+						<img src="../assets/img/instagram-footer-icon.png" alt="instagram-footer-icon">
 					</a>
 				</li>
 				<li>
 					<a href="https://www.linkedin.com/feed/">
-						<img src="/assets/img/linkedin-footer-icon.png" alt="linkedin-footer-icon">
+						<img src="../assets/img/linkedin-footer-icon.png" alt="linkedin-footer-icon">
 					</a>
 				</li>
 			</ul>

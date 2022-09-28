@@ -172,7 +172,7 @@
 .inputs-container select {
     width: 80%;
     height: 32px;
-    margin-bottom: 32px;
+    margin-top: 32px;
     border-radius: 4.8px;
 }
 
@@ -203,7 +203,9 @@ form h5 {
 
 .text-area-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin-top: 27.2px;
 }
 
@@ -540,10 +542,7 @@ form h5 {
 @media only screen and (min-width: 768px) {
     main {
         margin-left:min(30%, 320px);
-    }
-
-    .hamb-menu {
-        visibility: hidden;
+        margin-top: 112px;
     }
 
     form h5 {

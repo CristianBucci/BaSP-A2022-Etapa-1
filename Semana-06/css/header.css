@@ -19,7 +19,7 @@ header {
     color: #46a07b;
 }
 
-.home-login-signin {
+.home-login-link  {
     margin-right: 15px;
     font-weight: bold;
     color: #46a07b;
@@ -69,11 +69,11 @@ nav {
         display:block;
     }
 
-    .header-container {
-        margin-bottom: 0;
+    .home-login-link {
+        visibility: hidden;
     }
 
-    main {
-        margin-top: 112px;
+    .header-container {
+        margin-bottom: 0;
     }
 }
