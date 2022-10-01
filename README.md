@@ -143,7 +143,19 @@ Page in progress, sorry for the inconvenience 👷 🚧
 
 ## Week7
 📅
-#### This week's information will be completed soon.
+### Request with query-params.
+### Tasks:
+ - [x] *Copy the week-06 scafolding in week 07 folder*
+ - [x] *Send the data loaded in the form to a web server using a query-params request*
+ - [x] *Show the information obtained from the response of the request in an alert*
+ - [x] *For the sign up save the data obtained from the request in the LocalStorage of the browser*
+ - [x] *Show an Alert with the errors of the request*
+ - [x] *Follow good practices*
+ - [x] *Use git to save our progress to the repositories*
+ - [x] *Update this README*
+ - [x] *Be participative in the course group*
+ - [x] *Made the link in Github-Pages for week 07*
+ - [x] *Here is the link of Github-Pages repository: https://cristianbucci.github.io/BaSP-A2022-Etapa-1/Semana-07/views/home.html*
 ## Week8
 📅
 #### This week's information will be completed soon.
