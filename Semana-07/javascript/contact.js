@@ -10,33 +10,19 @@ window.onload = function() {
     var letterValidation;
     var letterNumberValidation;
 
-    var onespace = function (input) {
-        var arrayCharacters = input.split('');
-        for(var i=0; i<arrayCharacters.length; i++) {
-            if (arrayCharacters[i] == " ") {
-                if (arrayCharacters[0] == " ") {
-                    return false;
-                };
-                if (arrayCharacters[i+1] == " ") {
-                    return false;
-                };
-                if (arrayCharacters[arrayCharacters.length - 1] == " ") {
-                    return false;
-                };
-            };
-        };
-    };
-
     var validateLetterNumber = function(input) {
         var inputValue = (input.value.toLowerCase());
         for(var i = 0; i < inputValue.length; i++) {
-            if((inputValue.charCodeAt(i) >= 97) && (inputValue.charCodeAt(i) <= 122)) {
+            if (inputValue.charCodeAt(i) >= 97 && inputValue.charCodeAt(i) <= 122) {
                 letterNumberValidation = true;
-            }else if((inputValue.charCodeAt(i) === 241)) {
+            }
+            else if (inputValue.charCodeAt(i) === 241) {
                 letterNumberValidation = true;
-            }else if((inputValue.charCodeAt(i) === 209)) {
+            }
+            else if (inputValue.charCodeAt(i) === 209) {
                 letterNumberValidation = true;
-            }else if((inputValue.charCodeAt(i) >= 48) && (inputValue.charCodeAt(i) <= 57)) {
+            }
+            else if (inputValue.charCodeAt(i) >= 48 && inputValue.charCodeAt(i) <= 57) {
                 letterNumberValidation = true;
             }
             else {
@@ -49,13 +35,16 @@ window.onload = function() {
     var validateLetters = function(input) {
         var inputValue = (input.value.toLowerCase());
         for(var i = 0; i < inputValue.length; i++) {
-            if((inputValue.charCodeAt(i) >= 97) && (inputValue.charCodeAt(i) <= 122)) {
+            if (inputValue.charCodeAt(i) >= 97 && inputValue.charCodeAt(i) <= 122) {
                 letterValidation = true;
-            }else if((inputValue.charCodeAt(i) === 241)) {
+            }
+            else if (inputValue.charCodeAt(i) === 241) {
                 letterValidation = true;
-            }else if((inputValue.charCodeAt(i) === 209)) {
+            }
+            else if (inputValue.charCodeAt(i) === 209) {
                 letterValidation = true;
-            }else if((inputValue.charCodeAt(i) === 32)) {
+            }
+            else if (inputValue.charCodeAt(i) === 32) {
                 letterValidation = true;
             }
             else {
@@ -66,7 +55,7 @@ window.onload = function() {
     };
 
     var requiredField = function (input) {
-        if(input.value === '') {
+        if (input.value === '') {
             input.classList.add("border-red");
             var inputError = document.createElement("p");
             inputError.classList.add("input-"+input.name);
@@ -89,10 +78,10 @@ window.onload = function() {
     };
 
     var removeBorder = function(input) {
-        if(input.classList.contains("border-red")){
+        if (input.classList.contains("border-red")) {
             input.value = '';
             input.classList.remove("border-red");
-            if(document.querySelector(".input-" + input.name)) {
+            if (document.querySelector(".input-" + input.name)) {
                 document.querySelector(".input-" + input.name).remove();
             };
         };
@@ -100,8 +89,8 @@ window.onload = function() {
 
     nameInput.onblur = function() {
         validateLetters(nameInput);
-        if(!requiredField(nameInput)) {
-            if(!letterValidation || nameInput.value.length < 3 || !onespace(nameInput.value)) {
+        if (!requiredField(nameInput)) {
+            if (!letterValidation || nameInput.value.length < 3) {
                 addRedBorder(nameInput);
             }
             else {
@@ -114,14 +103,14 @@ window.onload = function() {
     };
 
     emailInput.onblur = function() {
-        if(emailInput.value === ''){
+        if (emailInput.value === '') {
             emailInput.classList.add("border-red");
             var inputError = document.createElement("p");
             inputError.classList.add("input-par");
             inputError.innerHTML = "Required field!!";
             emailInput.parentNode.insertBefore(inputError,  emailInput.nextSibling);
         }
-        else if(!emailInput.value.match(emailExpression)) {
+        else if (!emailInput.value.match(emailExpression)) {
             emailInput.classList.add("border-red");
             var inputError = document.createElement("p");
             inputError.classList.add("input-par");
@@ -134,31 +123,32 @@ window.onload = function() {
     };
 
     emailInput.onfocus = function() {
-        if(emailInput.classList.contains("border-red")){
+        if (emailInput.classList.contains("border-red")) {
             emailInput.value = '';
             emailInput.classList.remove("border-red");
-            if(document.querySelector(".input-par")) {
+            if (document.querySelector(".input-par")) {
                 document.querySelector(".input-par").remove();
             };
         };
     };
 
     formSelect.onblur = function() {
-            if(formSelect.value === '-Choose Contact Area-' || formSelect.value === ''){
+            if (formSelect.value === '-Choose Contact Area-' || formSelect.value === '') {
                 formSelect.classList.add("border-red");
                 var inputError = document.createElement("p");
                 inputError.classList.add("input-");
                 inputError.innerHTML = "Required field!!";
                 formSelect.parentNode.insertBefore(inputError,  formSelect.nextSibling);
-            }else{
+            }
+            else {
                 addGreenBorder(formSelect);
             };
         };
 
     formSelect.onfocus = function() {
-        if(formSelect.classList.contains("border-red")){
+        if (formSelect.classList.contains("border-red")) {
             formSelect.classList.remove("border-red");
-            if(document.querySelector(".input-")) {
+            if (document.querySelector(".input-")) {
                 document.querySelector(".input-").remove();
             };
         };
@@ -166,10 +156,11 @@ window.onload = function() {
 
     textArea.onblur = function () {
         validateLetterNumber(textArea);
-        if(!requiredField(textArea)){
-            if(!letterNumberValidation || textArea.value.length < 3){
+        if (!requiredField(textArea)){
+            if (!letterNumberValidation || textArea.value.length < 3) {
                 addRedBorder(textArea);
-            }else {
+            }
+            else {
                 addGreenBorder(textArea);
             };
         };
@@ -179,28 +170,31 @@ window.onload = function() {
         removeBorder(textArea);
     };
 
-    submitButton.onclick = function(e){
+    submitButton.onclick = function(e) {
         e.preventDefault();
         var invalidValue = '' ;
         var validValue = '';
         for(var i = 0; i < inputs.length ; i++){
-            if(inputs[i].classList.contains("border-red") || inputs[i].value === ''){
-                if(inputs[i].value === ''){
+            if (inputs[i].classList.contains("border-red") || inputs[i].value === '') {
+                if (inputs[i].value === '') {
                     inputs[i].classList.add("border-red");
                     invalidValue += '\n' + 'Required value ' + inputs[i].name + ' - ';
-                }else{
+                }
+                else {
                     inputs[i].classList.add("border-red");
                     invalidValue += '\n' + 'Invalid value ' + inputs[i].value  + ' in ' + inputs[i].name + ' - ';
                 };
-            }else {
+            }
+            else {
                 validValue += '\n' + ' "' + inputs[i].name  + '"' + ' : ' + inputs[i].value + ' - ';
             };
         };
         var validationArr = validValue.split('-');
-        if(validationArr.length !== 6){
+        if (validationArr.length !== 6) {
             console.log(validationArr);
             alert('Error' + ' values ' + invalidValue);
-        }else{
+        }
+        else {
             alert('Succes' + ' ' + validValue);
         };
     };

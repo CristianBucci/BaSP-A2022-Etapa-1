@@ -16,7 +16,6 @@ window.onload = function() {
     var letterValidation;
     var numberValidation;
     var letterSpaceNumberValidation;
-    var letterAndNumberValidation;
 
     firstName.value = localStorage.getItem('name');
     lastName.value = localStorage.getItem('last name');
@@ -48,10 +47,31 @@ window.onload = function() {
         return true;
     };
 
+    var onlyOneSpace = function (input) {
+        var arrayCharacters = input.split('');
+        for(var i=0; i < arrayCharacters.length; i++) {
+            if (arrayCharacters[i] == " ") {
+                if (arrayCharacters[0] == " ") {
+                    return false;
+                };
+                if (arrayCharacters[i+1] == " ") {
+                    return false;
+                };
+                if (arrayCharacters[arrayCharacters.length - 1] == " ") {
+                    return false;
+                };
+            }
+            else if (!arrayCharacters.includes(' ')){
+                return false
+            }
+        };
+        return true;
+    };
+
     var validateLetters = function(input) {
         var inputValue = input.value.toLowerCase();
         for(var i = 0; i < inputValue.length; i++) {
-            if(inputValue.charCodeAt(i) >= 97 && inputValue.charCodeAt(i) <= 122) {
+            if (inputValue.charCodeAt(i) >= 97 && inputValue.charCodeAt(i) <= 122) {
                 letterValidation = true;
             }
             else {
@@ -64,7 +84,7 @@ window.onload = function() {
     var validateNumber = function(input) {
         var inputValue = input.value;
         for(var i = 0; i < inputValue.length; i++) {
-            if(inputValue.charCodeAt(i) >= 48 && inputValue.charCodeAt(i) <= 57) {
+            if (inputValue.charCodeAt(i) >= 48 && inputValue.charCodeAt(i) <= 57) {
                 numberValidation = true;
             }
             else {
@@ -74,32 +94,16 @@ window.onload = function() {
         };
     };
 
-    var validateLetterAndNumber = function(input) {
-        var inputValue = input.value.toLowerCase();
-        for(var i = 0; i < inputValue.length; i++) {
-            if(inputValue.charCodeAt(i) >= 97 && inputValue.charCodeAt(i) <= 122) {
-                letterAndNumberValidation = true;
-            }
-            else if(inputValue.charCodeAt(i) >= 48 && inputValue.charCodeAt(i) <= 57) {
-                letterAndNumberValidation = true;
-            }
-            else {
-                letterAndNumberValidation = false;
-                break;
-            };
-        };
-    };
-
     var validateLetterSpaceNumber = function(input) {
         var inputValue = (input.value.toLowerCase());
         for(var i = 0; i < inputValue.length; i++) {
-            if(inputValue.charCodeAt(i) >= 97 && inputValue.charCodeAt(i) <= 122) {
+            if (inputValue.charCodeAt(i) >= 97 && inputValue.charCodeAt(i) <= 122) {
                 letterSpaceNumberValidation = true;
             }
-            else if(inputValue.charCodeAt(i) === 32) {
+            else if (inputValue.charCodeAt(i) === 32) {
                 letterSpaceNumberValidation = true;
             }
-            else if(inputValue.charCodeAt(i) >= 48 && inputValue.charCodeAt(i) <= 57) {
+            else if (inputValue.charCodeAt(i) >= 48 && inputValue.charCodeAt(i) <= 57) {
                 letterSpaceNumberValidation = true;
             }
             else {
@@ -118,7 +122,7 @@ window.onload = function() {
     };
 
     var requiredField = function (input) {
-        if(input.value === '') {
+        if (input.value === '') {
             input.classList.add("border-red");
             var inputError = document.createElement("p");
             inputError.classList.add("input-"+input.name);
@@ -133,10 +137,10 @@ window.onload = function() {
     };
 
     var removeBorder = function(input){
-        if(input.classList.contains("border-red")){
+        if (input.classList.contains("border-red")){
             input.value = '';
             input.classList.remove("border-red");
-            if(document.querySelector(".input-" + input.name)) {
+            if (document.querySelector(".input-" + input.name)) {
                 document.querySelector(".input-" + input.name).remove();
             };
         };
@@ -144,8 +148,8 @@ window.onload = function() {
 
     firstName.onblur = function() {
         validateLetters(firstName);
-        if(!requiredField(firstName)) {
-            if(!letterValidation || firstName.value.length < 3) {
+        if (!requiredField(firstName)) {
+            if (!letterValidation || firstName.value.length < 3) {
                 addRedBorder(firstName);
             }
             else {
@@ -160,8 +164,8 @@ window.onload = function() {
 
     lastName.onblur = function() {
         validateLetters(lastName);
-        if(!requiredField(lastName)) {
-            if(!letterValidation || lastName.value.length < 3) {
+        if (!requiredField(lastName)) {
+            if (!letterValidation || lastName.value.length < 3) {
                 addRedBorder(lastName);
             }
             else {
@@ -176,8 +180,8 @@ window.onload = function() {
 
     dni.onblur = function() {
         validateNumber(dni);
-        if(!requiredField(dni)) {
-            if(!numberValidation || dni.value.length < 7) {
+        if (!requiredField(dni)) {
+            if (!numberValidation || dni.value.length < 7) {
                 addRedBorder(dni);
             }
             else {
@@ -203,8 +207,8 @@ window.onload = function() {
 
     phone.onblur = function() {
         validateNumber(phone);
-        if(!requiredField(phone)) {
-            if(!numberValidation || phone.value.length !== 10) {
+        if (!requiredField(phone)) {
+            if (!numberValidation || phone.value.length !== 10) {
                 addRedBorder(phone);
             }
             else {
@@ -221,8 +225,8 @@ window.onload = function() {
         validateLetters(address);
         validateNumber(address);
 
-        if(!requiredField(address)) {
-            if(letterValidation || numberValidation || !onespace(address.value)) {
+        if (!requiredField(address)) {
+            if (letterValidation || numberValidation || !onlyOneSpace(address.value)) {
                 addRedBorder(address);
             }
             else {
@@ -237,8 +241,8 @@ window.onload = function() {
 
     location.onblur = function() {
         validateLetterSpaceNumber(location);
-        if(!requiredField(location)) {
-            if(!letterSpaceNumberValidation || location.value.length < 3 || !onespace(location.value)) {
+        if (!requiredField(location)) {
+            if (!letterSpaceNumberValidation || location.value.length < 3 || !onespace(location.value)) {
                 addRedBorder(location);
             }
             else {
@@ -253,8 +257,8 @@ window.onload = function() {
 
     postalCode.onblur = function() {
         validateNumber(postalCode);
-        if(!requiredField(postalCode)) {
-            if(!numberValidation || postalCode.value.length < 4 || postalCode.value.length > 5) {
+        if (!requiredField(postalCode)) {
+            if (!numberValidation || postalCode.value.length < 4 || postalCode.value.length > 5) {
                 addRedBorder(postalCode);
             }
             else {
@@ -269,8 +273,8 @@ window.onload = function() {
 
 
     email.onblur = function() {
-        if(!requiredField(email)){
-            if(!email.value.match(emailExpression)) {
+        if (!requiredField(email)){
+            if (!email.value.match(emailExpression)) {
                 addRedBorder(email);
             }else {
             addGreenBorder(email);
@@ -283,9 +287,10 @@ window.onload = function() {
     };
 
     password.onblur = function() {
-        validateLetterAndNumber(password)
-        if(!requiredField(password)) {
-            if(!letterAndNumberValidation || password.value.length < 8) {
+        validateLetters(password);
+        validateNumber(password);
+        if (!requiredField(password)) {
+            if (letterValidation || numberValidation || password.value.length < 8) {
                 addRedBorder(password);
             }
             else {
@@ -300,7 +305,7 @@ window.onload = function() {
 
     repeatPassword.onblur = function() {
         if (!requiredField(repeatPassword)){
-            if(repeatPassword.value !== password.value) {
+            if (repeatPassword.value !== password.value) {
             addRedBorder(repeatPassword);
             }else {
                 addGreenBorder(repeatPassword);
@@ -314,8 +319,6 @@ window.onload = function() {
 
     button.onclick = function(e){
         e.preventDefault();
-        var invalidValue = '' ;
-        var validValue = '';
 
         var year = date.value.substring(0 , date.value.indexOf('-'));
         var month = date.value.substring(date.value.indexOf('-') + 1, date.value.indexOf('-') + 3);
@@ -323,67 +326,67 @@ window.onload = function() {
         var dateArr = [ month, day , year];
         var finalDate = dateArr.join('/');
 
-            var signUp = "https://basp-m2022-api-rest-server.herokuapp.com/signup?name="
-            +firstName.value
-            +"&lastName="+lastName.value
-            +"&dni="+dni.value
-            +"&dob="+finalDate
-            +"&phone="+phone.value
-            +"&address="+address.value
-            +"&city="+location.value
-            +"&zip="+postalCode.value
-            +"&email="+email.value
-            +"&password="+password.value;
+        var signUp = "https://basp-m2022-api-rest-server.herokuapp.com/signup?name="
+        +firstName.value
+        +"&lastName="+lastName.value
+        +"&dni="+dni.value
+        +"&dob="+finalDate
+        +"&phone="+phone.value
+        +"&address="+address.value
+        +"&city="+location.value
+        +"&zip="+postalCode.value
+        +"&email="+email.value
+        +"&password="+password.value;
 
-            fetch(signUp)
-            .then(function(pro) {
-                return pro.json()
-            })
-            .then(function(data) {
-                if(data.success) {
-                    alert(
-                    'Request Response :' + '\n' + data.msg + '\n'
-                    + 'Your first name is: ' + firstName.value
-                    + '\n' + 'Your last name is: ' + lastName.value + '\n'
-                    + 'Your dni is: ' + dni.value + '\n'
-                    + 'Your phone is: ' + phone.value + '\n'
-                    + 'Your birthday is: ' + date.value + '\n'
-                    + 'Your address is: ' + address.value + '\n'
-                    + 'Your location is: ' + location.value + '\n'
-                    + 'Your zipcode is: ' + postalCode.value + '\n'
-                    + 'Your email is: ' + email.value+ '\n'
-                    + 'Your password is: ' + password.value + '\n'
-                    + 'Success: ' + data.success
-                    );
+        fetch(signUp)
+        .then(function(pro) {
+            return pro.json();
+        })
+        .then(function(data) {
+            if (data.success) {
+                alert(
+                'Request Response :' + '\n' + data.msg + '\n'
+                + 'Your first name is: ' + firstName.value
+                + '\n' + 'Your last name is: ' + lastName.value + '\n'
+                + 'Your dni is: ' + dni.value + '\n'
+                + 'Your phone is: ' + phone.value + '\n'
+                + 'Your birthday is: ' + date.value + '\n'
+                + 'Your address is: ' + address.value + '\n'
+                + 'Your location is: ' + location.value + '\n'
+                + 'Your zipcode is: ' + postalCode.value + '\n'
+                + 'Your email is: ' + email.value+ '\n'
+                + 'Your password is: ' + password.value + '\n'
+                + 'Success: ' + data.success
+                );
 
-                    localStorage.setItem('name', firstName.value);
-                    localStorage.setItem('last name', lastName.value);
-                    localStorage.setItem('dni', dni.value);
-                    localStorage.setItem('date', date.value);
-                    localStorage.setItem('phone', phone.value);
-                    localStorage.setItem('address', address.value);
-                    localStorage.setItem('location', location.value);
-                    localStorage.setItem('zip', postalCode.value);
-                    localStorage.setItem('email', email.value);
-                    localStorage.setItem('password', password.value);
-                    localStorage.setItem('repeat-password', repeatPassword.value);
-            }else{
-                return data
+                localStorage.setItem('name', firstName.value);
+                localStorage.setItem('last name', lastName.value);
+                localStorage.setItem('dni', dni.value);
+                localStorage.setItem('date', date.value);
+                localStorage.setItem('phone', phone.value);
+                localStorage.setItem('address', address.value);
+                localStorage.setItem('location', location.value);
+                localStorage.setItem('zip', postalCode.value);
+                localStorage.setItem('email', email.value);
+                localStorage.setItem('password', password.value);
+                localStorage.setItem('repeat-password', repeatPassword.value);
+            }
+            else {
+                return data;
             }
         })
         .then(function(err) {
-            console.log(err.errors);
             return err.errors;
         })
-        .then(function(erro){
-            var errors =[]
-            for(var i = 0 ; i < erro.length; i++){
-                errors += '\n' + erro[i].msg
+        .then(function(err) {
+            var errors =[];
+            for(var i = 0 ; i < err.length; i++) {
+                errors += '\n' + err[i].msg;
             }
-            throw new Error (errors)
+            throw new Error (errors);
         })
         .catch(function(error) {
             alert(error);
         });
-        };
     };
+};

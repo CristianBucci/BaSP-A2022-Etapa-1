@@ -5,7 +5,6 @@ window.onload = function() {
     var buttonLogin = document.getElementById("login-button");
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
     var inputValidation;
-    var valueCounter = 0;
 
     var borderRedRequired = function(input) {
         var inputError = document.createElement("p");
@@ -28,24 +27,22 @@ window.onload = function() {
     };
 
     var removeBorder = function(input) {
-        input.value = '';
         input.classList.remove("border-red");
-        if(document.querySelector(".input-" + input.name)) {
+        input.classList.remove("border-green");
+        if (document.querySelector(".input-" + input.name)) {
             document.querySelector(".input-" + input.name).remove();
         };
     };
 
     formInputEmail.onblur = function() {
-        if(formInputEmail.value === '') {
+        if (formInputEmail.value === '') {
             borderRedRequired(formInputEmail);
         }
-        else if(!formInputEmail.value.match(emailExpression)) {
+        else if (!formInputEmail.value.match(emailExpression)) {
             borderRed(formInputEmail);
         }
         else {
             borderGreen(formInputEmail);
-            valueCounter += 1;
-            return valueCounter;
         };
     };
 
@@ -55,11 +52,11 @@ window.onload = function() {
 
     formInputPassword.onblur = function() {
         var inputValue = (formInputPassword.value).toLowerCase();
-        for(var i = 0; i < inputValue.length;i++) {
-            if(inputValue.charCodeAt(i) >= 97 && inputValue.charCodeAt(i) <= 122) {
+        for (var i = 0; i < inputValue.length;i++) {
+            if (inputValue.charCodeAt(i) >= 97 && inputValue.charCodeAt(i) <= 122) {
                 inputValidation = true;
             }
-            else if(inputValue.charCodeAt(i) >= 48 && inputValue.charCodeAt(i) <= 57) {
+            else if (inputValue.charCodeAt(i) >= 48 && inputValue.charCodeAt(i) <= 57) {
                 inputValidation = true;
             }
             else {
@@ -67,16 +64,14 @@ window.onload = function() {
                 break
             };
         };
-        if(formInputPassword.value === '') {
+        if (formInputPassword.value === '') {
             borderRedRequired(formInputPassword);
         }
-        else if(!inputValidation || formInputPassword.value === "" || formInputPassword.value.length < 8) {
+        else if (!inputValidation || formInputPassword.value === "" || formInputPassword.value.length < 8) {
             borderRed(formInputPassword);
         }
         else {
             borderGreen(formInputPassword);
-            valueCounter += 1;
-            return valueCounter;
         };
     };
 
@@ -93,22 +88,25 @@ window.onload = function() {
         var validEmail = 'Email:';
         var validPassword = 'Password:';
 
-        if(formInputEmail.classList.contains("border-red") && formInputPassword.classList.contains("border-red")) {
+        if (formInputEmail.classList.contains("border-red") && formInputPassword.classList.contains("border-red")) {
             invalidEmail += formInputEmail.value;
             invalidPassword += formInputPassword.value;
             alert(invalidEmail + '\n' + invalidPassword);
         }
-        else if(formInputEmail.classList.contains("border-red")) {
+        else if (formInputEmail.classList.contains("border-red")) {
             invalidEmail += formInputEmail.value;
             alert(invalidEmail);
-        }else if(formInputPassword.classList.contains("border-red")) {
+        }
+        else if (formInputPassword.classList.contains("border-red")) {
             invalidPassword += formInputPassword.value;
             alert(invalidPassword);
-        }else if(formInputEmail.value == '' || formInputPassword.value == '') {
+        }
+        else if (formInputEmail.value == '' || formInputPassword.value == '') {
             formInputEmail.classList.add("border-red");
             formInputPassword.classList.add("border-red");
             alert('Required fields');
-        }else {
+        }
+        else {
 
             validEmail += formInputEmail.value;
             validPassword += formInputPassword.value;
@@ -122,9 +120,10 @@ window.onload = function() {
             })
             .then(function(data){
                 console.log(data);
-                if(!data.success){
+                if (!data.success){
                     throw new Error (data.msg + '\n' + 'Success: ' + data.success);
-                }else {
+                }
+                else {
                 alert('\n' + 'Succes ' + data.success + '\n' + validEmail + '\n' + validPassword + '\n' +
                 'Request: ' + data.msg);
                 }
