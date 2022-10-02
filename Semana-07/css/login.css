@@ -36,10 +36,16 @@ main article form {
     margin-bottom: 50px;
 }
 
+.inputs-container label {
+    margin-top: 40px;
+    font-weight: 700;
+    color: #373867;
+}
+
 .inputs {
     width: 200px;
     height: 25px;
-    margin-top: 40px;
+    margin-top: 5px;
     border: none;
     outline: none;
     border-bottom: 1px solid #000;

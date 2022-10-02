@@ -5,47 +5,61 @@ window.onload = function() {
     var buttonLogin = document.getElementById("login-button");
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
     var inputValidation;
+    var valueCounter = 0;
+
+    var borderRedRequired = function(input) {
+        var inputError = document.createElement("p");
+        input.classList.add("border-red");
+        inputError.classList.add("input-" + input.name);
+        inputError.innerHTML = "Required " + input.name;
+        input.parentNode.insertBefore(inputError, input.nextSibling);
+    };
+
+    var borderRed = function(input) {
+        input.classList.add("border-red");
+        var inputError = document.createElement("p");
+        inputError.classList.add("input-" + input.name);
+        inputError.innerHTML = "Invalid " + input.name;
+        input.parentNode.insertBefore(inputError, input.nextSibling);
+    };
+
+    var borderGreen = function(input) {
+        input.classList.add("border-green");
+    };
+
+    var removeBorder = function(input) {
+        input.value = '';
+        input.classList.remove("border-red");
+        if(document.querySelector(".input-" + input.name)) {
+            document.querySelector(".input-" + input.name).remove();
+        };
+    };
 
     formInputEmail.onblur = function() {
-
         if(formInputEmail.value === '') {
-            formInputEmail.classList.add("border-red");
-            var inputError = document.createElement("p");
-            inputError.classList.add("input-par");
-            inputError.innerHTML = "Required field!!";
-            formInputEmail.parentNode.insertBefore(inputError,  formInputEmail.nextSibling);
+            borderRedRequired(formInputEmail);
         }
         else if(!formInputEmail.value.match(emailExpression)) {
-            formInputEmail.classList.add("border-red");
-            var inputError = document.createElement("p");
-            inputError.classList.add("input-par");
-            inputError.innerHTML = "Invalid email!!";
-            formInputEmail.parentNode.insertBefore(inputError,  formInputEmail.nextSibling);
+            borderRed(formInputEmail);
         }
         else {
-            formInputEmail.classList.add("border-green");
+            borderGreen(formInputEmail);
+            valueCounter += 1;
+            return valueCounter;
         };
     };
 
     formInputEmail.onfocus = function() {
-
-        formInputEmail.value = '';
-        formInputEmail.classList.remove("border-red");
-
-        if(document.querySelector(".input-par")) {
-            document.querySelector(".input-par").remove();
-        };
+        removeBorder(formInputEmail);
     };
 
     formInputPassword.onblur = function() {
-
         var inputValue = (formInputPassword.value).toLowerCase();
-
         for(var i = 0; i < inputValue.length;i++) {
-            if((inputValue.charCodeAt(i) >= 97) && (inputValue.charCodeAt(i) <= 122)) {
+            if(inputValue.charCodeAt(i) >= 97 && inputValue.charCodeAt(i) <= 122) {
                 inputValidation = true;
             }
-            else if((inputValue.charCodeAt(i) >= 48) && ((inputValue.charCodeAt(i) <= 57))) {
+            else if(inputValue.charCodeAt(i) >= 48 && inputValue.charCodeAt(i) <= 57) {
                 inputValidation = true;
             }
             else {
@@ -53,37 +67,25 @@ window.onload = function() {
                 break
             };
         };
-
         if(formInputPassword.value === '') {
-            formInputPassword.classList.add("border-red");
-            var inputError = document.createElement("p");
-            inputError.classList.add("input-par-pass");
-            inputError.innerHTML = "Required field!!";
-            formInputPassword.parentNode.insertBefore(inputError,  formInputPassword.nextSibling);
+            borderRedRequired(formInputPassword);
         }
         else if(!inputValidation || formInputPassword.value === "" || formInputPassword.value.length < 8) {
-            formInputPassword.classList.add("border-red");
-            var inputErrorPassword = document.createElement("p");
-            inputErrorPassword.classList.add("input-par-pass");
-            inputErrorPassword.innerHTML = "Enter a valid password!!";
-            formInputPassword.parentNode.insertBefore(inputErrorPassword, formInputPassword.nextSibling);
+            borderRed(formInputPassword);
         }
         else {
-            formInputPassword.classList.add("border-green");
+            borderGreen(formInputPassword);
+            valueCounter += 1;
+            return valueCounter;
         };
     };
 
     formInputPassword.onfocus = function() {
-
-        formInputPassword.value = '';
-        formInputPassword.classList.remove("border-red");
-        if(document.querySelector(".input-par-pass")) {
-            document.querySelector(".input-par-pass").remove();
-        };
+        removeBorder(formInputPassword);
     };
 
-    buttonLogin.onclick = function (e) {
 
+    buttonLogin.onclick = function (e) {
         e.preventDefault();
 
         var invalidEmail = 'Invalid email:';
@@ -102,16 +104,34 @@ window.onload = function() {
         }else if(formInputPassword.classList.contains("border-red")) {
             invalidPassword += formInputPassword.value;
             alert(invalidPassword);
+        }else if(formInputEmail.value == '' || formInputPassword.value == '') {
+            formInputEmail.classList.add("border-red");
+            formInputPassword.classList.add("border-red");
+            alert('Required fields');
         }else {
-            if(formInputEmail.value == '' || formInputPassword.value == '') {
-                formInputEmail.classList.add("border-red");
-                formInputPassword.classList.add("border-red");
-                alert('Required fields');
-            }else {
+
             validEmail += formInputEmail.value;
             validPassword += formInputPassword.value;
-            alert('Succes ' + '\n' + validEmail + '\n' + validPassword);
-            };
+
+            var login = 'https://basp-m2022-api-rest-server.herokuapp.com/login?email='+ formInputEmail.value +
+            '&password=' + formInputPassword.value;
+
+            fetch(login)
+            .then(function(pro){
+                return pro.json();
+            })
+            .then(function(data){
+                console.log(data);
+                if(!data.success){
+                    throw new Error (data.msg + '\n' + 'Success: ' + data.success);
+                }else {
+                alert('\n' + 'Succes ' + data.success + '\n' + validEmail + '\n' + validPassword + '\n' +
+                'Request: ' + data.msg);
+                }
+            })
+            .catch(function(error){
+                alert(error);
+            })
         };
     };
 };

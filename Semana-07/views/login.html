@@ -80,10 +80,6 @@
 				</nav>
 		</header>
 			<aside class="aside-container">
-				<form>
-					<input type="text" class="search-input" value
-					placeholder="Search">
-				</form>
 				<h4>
 					Menu
 				</h4>
@@ -124,9 +120,11 @@
                 </h2>
                 <form>
                     <div class="inputs-container">
-                        <input type="text" class="inputs"
-                        id="form-input-email" placeholder="Email">
-                        <input type="password" class="inputs" id="form-input-password" placeholder="Password">
+                        <label for="Email">Email</label>
+						<input type="text" class="inputs"
+                        id="form-input-email" name="Email" placeholder="Email">
+						<label for="Password">Password</label>
+                        <input type="password" class="inputs" id="form-input-password" name="Password" placeholder="Password">
                     </div>
                     <button id="login-button">
                         Login

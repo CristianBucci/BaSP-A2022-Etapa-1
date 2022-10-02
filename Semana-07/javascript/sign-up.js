@@ -5,18 +5,30 @@ window.onload = function() {
     var dni = document.getElementById("dni");
     var date = document.getElementById("date");
     var phone = document.getElementById("phone");
-    var adress = document.getElementById("adress");
+    var address = document.getElementById("address");
     var location = document.getElementById("location");
     var postalCode = document.getElementById("postal-code");
     var email = document.getElementById("email");
     var password = document.getElementById("password");
     var button = document.getElementById("signup-button");
-    var inputs = document.getElementsByTagName("input");
     var repeatPassword = document.getElementById("repeat-password");
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
     var letterValidation;
     var numberValidation;
     var letterSpaceNumberValidation;
+    var letterAndNumberValidation;
+
+    firstName.value = localStorage.getItem('name');
+    lastName.value = localStorage.getItem('last name');
+    dni.value = localStorage.getItem('dni');
+    date.value = localStorage.getItem('date');
+    phone.value = localStorage.getItem('phone');
+    address.value = localStorage.getItem('address');
+    location.value = localStorage.getItem('location');
+    postalCode.value = localStorage.getItem('zip');
+    email.value = localStorage.getItem('email');
+    password.value = localStorage.getItem('password');
+    repeatPassword.value = localStorage.getItem('repeat-password');
 
     var onespace = function (input) {
         var arrayCharacters = input.split('');
@@ -31,21 +43,15 @@ window.onload = function() {
                 if (arrayCharacters[arrayCharacters.length - 1] == " ") {
                     return false;
                 };
-            };
+            }
         };
         return true;
     };
 
     var validateLetters = function(input) {
-        var inputValue = (input.value.toLowerCase());
+        var inputValue = input.value.toLowerCase();
         for(var i = 0; i < inputValue.length; i++) {
-            if((inputValue.charCodeAt(i) >= 97) && (inputValue.charCodeAt(i) <= 122)) {
-                letterValidation = true;
-            }
-            else if((inputValue.charCodeAt(i) === 241)) {
-                letterValidation = true;
-            }
-            else if((inputValue.charCodeAt(i) === 209)) {
+            if(inputValue.charCodeAt(i) >= 97 && inputValue.charCodeAt(i) <= 122) {
                 letterValidation = true;
             }
             else {
@@ -56,9 +62,9 @@ window.onload = function() {
     };
 
     var validateNumber = function(input) {
-        var inputValue = (input.value.toLowerCase());
+        var inputValue = input.value;
         for(var i = 0; i < inputValue.length; i++) {
-            if((inputValue.charCodeAt(i) >= 48) && (inputValue.charCodeAt(i) <= 57)) {
+            if(inputValue.charCodeAt(i) >= 48 && inputValue.charCodeAt(i) <= 57) {
                 numberValidation = true;
             }
             else {
@@ -68,22 +74,32 @@ window.onload = function() {
         };
     };
 
+    var validateLetterAndNumber = function(input) {
+        var inputValue = input.value.toLowerCase();
+        for(var i = 0; i < inputValue.length; i++) {
+            if(inputValue.charCodeAt(i) >= 97 && inputValue.charCodeAt(i) <= 122) {
+                letterAndNumberValidation = true;
+            }
+            else if(inputValue.charCodeAt(i) >= 48 && inputValue.charCodeAt(i) <= 57) {
+                letterAndNumberValidation = true;
+            }
+            else {
+                letterAndNumberValidation = false;
+                break;
+            };
+        };
+    };
+
     var validateLetterSpaceNumber = function(input) {
         var inputValue = (input.value.toLowerCase());
         for(var i = 0; i < inputValue.length; i++) {
-            if((inputValue.charCodeAt(i) >= 97) && (inputValue.charCodeAt(i) <= 122)) {
+            if(inputValue.charCodeAt(i) >= 97 && inputValue.charCodeAt(i) <= 122) {
                 letterSpaceNumberValidation = true;
             }
-            else if((inputValue.charCodeAt(i) === 241)) {
+            else if(inputValue.charCodeAt(i) === 32) {
                 letterSpaceNumberValidation = true;
             }
-            else if((inputValue.charCodeAt(i) === 209)) {
-                letterSpaceNumberValidation = true;
-            }
-            else if((inputValue.charCodeAt(i) === 32)) {
-                letterSpaceNumberValidation = true;
-            }
-            else if((inputValue.charCodeAt(i) >= 48) && (inputValue.charCodeAt(i) <= 57)) {
+            else if(inputValue.charCodeAt(i) >= 48 && inputValue.charCodeAt(i) <= 57) {
                 letterSpaceNumberValidation = true;
             }
             else {
@@ -201,20 +217,22 @@ window.onload = function() {
         removeBorder(phone);
     };
 
-    adress.onblur = function() {
-        validateLetterSpaceNumber(adress);
-        if(!requiredField(adress)) {
-            if(!letterSpaceNumberValidation || adress.value.length < 5 || !onespace(adress.value)) {
-                addRedBorder(adress);
+    address.onblur = function() {
+        validateLetters(address);
+        validateNumber(address);
+
+        if(!requiredField(address)) {
+            if(letterValidation || numberValidation || !onespace(address.value)) {
+                addRedBorder(address);
             }
             else {
-                addGreenBorder(adress);
+                addGreenBorder(address);
             };
         };
     };
 
-    adress.onfocus = function() {
-        removeBorder(adress);
+    address.onfocus = function() {
+        removeBorder(address);
     };
 
     location.onblur = function() {
@@ -250,41 +268,24 @@ window.onload = function() {
     };
 
 
-    email.onblur = function(e) {
-        e.preventDefault();
-        if(email.value === ''){
-            email.classList.add("border-red");
-            var inputError = document.createElement("p");
-            inputError.classList.add("input-par");
-            inputError.innerHTML = "Required field!!";
-            email.parentNode.insertBefore(inputError,  email.nextSibling);
-        }
-        else if(!email.value.match(emailExpression)) {
-            email.classList.add("border-red");
-            var inputError = document.createElement("p");
-            inputError.classList.add("input-par");
-            inputError.innerHTML = "Enter a valid email!!";
-            email.parentNode.insertBefore(inputError,  email.nextSibling);
-        }else {
-            email.classList.add("border-green");
-        };
-    };
-
-    email.onfocus = function(e) {
-        e.preventDefault();
-        if(email.classList.contains("border-red")){
-            email.value = '';
-            email.classList.remove("border-red");
-            if(document.querySelector(".input-par")) {
-                document.querySelector(".input-par").remove();
+    email.onblur = function() {
+        if(!requiredField(email)){
+            if(!email.value.match(emailExpression)) {
+                addRedBorder(email);
+            }else {
+            addGreenBorder(email);
             };
         };
     };
 
+    email.onfocus = function() {
+        removeBorder(email);
+    };
+
     password.onblur = function() {
-        validateNumber(password);
+        validateLetterAndNumber(password)
         if(!requiredField(password)) {
-            if(!numberValidation || password.value.length < 8) {
+            if(!letterAndNumberValidation || password.value.length < 8) {
                 addRedBorder(password);
             }
             else {
@@ -298,55 +299,91 @@ window.onload = function() {
     };
 
     repeatPassword.onblur = function() {
-        if (repeatPassword.value === '') {
-            repeatPassword.classList.add("border-red");
-            var inputError = document.createElement("p");
-            inputError.classList.add("input-par-repeatPassword");
-            inputError.innerHTML = "Required Field";
-            repeatPassword.parentNode.insertBefore(inputError,  repeatPassword.nextSibling);
-        }else if(repeatPassword.value !== password.value) {
-            repeatPassword.classList.add("border-red");
-            var inputError = document.createElement("p");
-            inputError.classList.add("input-par-repeatPassword");
-            inputError.innerHTML = "Passwords don`t match";
-            repeatPassword.parentNode.insertBefore(inputError,  repeatPassword.nextSibling);
+        if (!requiredField(repeatPassword)){
+            if(repeatPassword.value !== password.value) {
+            addRedBorder(repeatPassword);
             }else {
-                repeatPassword.classList.add("border-green");
+                addGreenBorder(repeatPassword);
             };
         };
+    };
 
     repeatPassword.onfocus = function() {
-        if(repeatPassword.value);
-        repeatPassword.value = '';
-        repeatPassword.classList.remove("border-red");
-        if(document.querySelector(".input-par-repeatPassword")) {
-            document.querySelector(".input-par-repeatPassword").remove();
-        };
+        removeBorder(repeatPassword);
     };
 
     button.onclick = function(e){
         e.preventDefault();
         var invalidValue = '' ;
         var validValue = '';
-        for(var i = 0; i < inputs.length ; i++){
-            if(inputs[i].classList.contains("border-red") || inputs[i].value === ''){
-                if(inputs[i].value === ''){
-                    inputs[i].classList.add("border-red");
-                    invalidValue += '\n' + 'Required value ' + inputs[i].name + ' - ';
-                }else{
-                    inputs[i].classList.add("border-red");
-                    invalidValue += '\n' + 'Invalid value ' + inputs[i].value  + ' in ' + inputs[i].name + ' - ';
-                };
-            }else {
-                validValue += '\n' + ' "' + inputs[i].name  + '"' + ' : ' + inputs[i].value + ' - ';
-            };
-        };
-        var validationArr = validValue.split('-');
-        if(validationArr.length !== 16){
-            console.log(validationArr);
-            alert('Error' + ' values ' + invalidValue);
-        }else{
-            alert('Succes' + ' ' + validValue);
+
+        var year = date.value.substring(0 , date.value.indexOf('-'));
+        var month = date.value.substring(date.value.indexOf('-') + 1, date.value.indexOf('-') + 3);
+        var day = date.value.substring(date.value.indexOf('-')+ 4 , date.value.indexOf('-') + date.value.length);
+        var dateArr = [ month, day , year];
+        var finalDate = dateArr.join('/');
+
+            var signUp = "https://basp-m2022-api-rest-server.herokuapp.com/signup?name="
+            +firstName.value
+            +"&lastName="+lastName.value
+            +"&dni="+dni.value
+            +"&dob="+finalDate
+            +"&phone="+phone.value
+            +"&address="+address.value
+            +"&city="+location.value
+            +"&zip="+postalCode.value
+            +"&email="+email.value
+            +"&password="+password.value;
+
+            fetch(signUp)
+            .then(function(pro) {
+                return pro.json()
+            })
+            .then(function(data) {
+                if(data.success) {
+                    alert(
+                    'Request Response :' + '\n' + data.msg + '\n'
+                    + 'Your first name is: ' + firstName.value
+                    + '\n' + 'Your last name is: ' + lastName.value + '\n'
+                    + 'Your dni is: ' + dni.value + '\n'
+                    + 'Your phone is: ' + phone.value + '\n'
+                    + 'Your birthday is: ' + date.value + '\n'
+                    + 'Your address is: ' + address.value + '\n'
+                    + 'Your location is: ' + location.value + '\n'
+                    + 'Your zipcode is: ' + postalCode.value + '\n'
+                    + 'Your email is: ' + email.value+ '\n'
+                    + 'Your password is: ' + password.value + '\n'
+                    + 'Success: ' + data.success
+                    );
+
+                    localStorage.setItem('name', firstName.value);
+                    localStorage.setItem('last name', lastName.value);
+                    localStorage.setItem('dni', dni.value);
+                    localStorage.setItem('date', date.value);
+                    localStorage.setItem('phone', phone.value);
+                    localStorage.setItem('address', address.value);
+                    localStorage.setItem('location', location.value);
+                    localStorage.setItem('zip', postalCode.value);
+                    localStorage.setItem('email', email.value);
+                    localStorage.setItem('password', password.value);
+                    localStorage.setItem('repeat-password', repeatPassword.value);
+            }else{
+                return data
+            }
+        })
+        .then(function(err) {
+            console.log(err.errors);
+            return err.errors;
+        })
+        .then(function(erro){
+            var errors =[]
+            for(var i = 0 ; i < erro.length; i++){
+                errors += '\n' + erro[i].msg
+            }
+            throw new Error (errors)
+        })
+        .catch(function(error) {
+            alert(error);
+        });
         };
     };
-};
