@@ -13,21 +13,19 @@ window.onload = function() {
     var button = document.getElementById("signup-button");
     var repeatPassword = document.getElementById("repeat-password");
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+    var inputs = document.getElementsByTagName("input")
     var letterValidation;
     var numberValidation;
     var letterSpaceNumberValidation;
+    var convertedDate;
 
-    firstName.value = localStorage.getItem('name');
-    lastName.value = localStorage.getItem('last name');
-    dni.value = localStorage.getItem('dni');
-    date.value = localStorage.getItem('date');
-    phone.value = localStorage.getItem('phone');
-    address.value = localStorage.getItem('address');
-    location.value = localStorage.getItem('location');
-    postalCode.value = localStorage.getItem('zip');
-    email.value = localStorage.getItem('email');
-    password.value = localStorage.getItem('password');
-    repeatPassword.value = localStorage.getItem('repeat-password');
+    var convertDate = function(input) {
+        var year = input.value.substring(0 , input.value.indexOf('-'));
+        var month = input.value.substring(input.value.indexOf('-') + 1, input.value.indexOf('-') + 3);
+        var day = input.value.substring(input.value.indexOf('-')+ 4 , input.value.indexOf('-') + input.value.length);
+        var dateArr = [ year, month , day];
+        convertedDate = dateArr.join('-');
+    }
 
     var onespace = function (input) {
         var arrayCharacters = input.split('');
@@ -290,7 +288,7 @@ window.onload = function() {
         validateLetters(password);
         validateNumber(password);
         if (!requiredField(password)) {
-            if (letterValidation || numberValidation || password.value.length < 8) {
+            if (!letterValidation && !numberValidation && password.value.length < 8) {
                 addRedBorder(password);
             }
             else {
@@ -326,6 +324,8 @@ window.onload = function() {
         var dateArr = [ month, day , year];
         var finalDate = dateArr.join('/');
 
+        removeBorder(repeatPassword);
+
         var signUp = "https://basp-m2022-api-rest-server.herokuapp.com/signup?name="
         +firstName.value
         +"&lastName="+lastName.value
@@ -338,55 +338,52 @@ window.onload = function() {
         +"&email="+email.value
         +"&password="+password.value;
 
-        fetch(signUp)
-        .then(function(pro) {
-            return pro.json();
-        })
-        .then(function(data) {
-            if (data.success) {
-                alert(
-                'Request Response :' + '\n' + data.msg + '\n'
-                + 'Your first name is: ' + firstName.value
-                + '\n' + 'Your last name is: ' + lastName.value + '\n'
-                + 'Your dni is: ' + dni.value + '\n'
-                + 'Your phone is: ' + phone.value + '\n'
-                + 'Your birthday is: ' + date.value + '\n'
-                + 'Your address is: ' + address.value + '\n'
-                + 'Your location is: ' + location.value + '\n'
-                + 'Your zipcode is: ' + postalCode.value + '\n'
-                + 'Your email is: ' + email.value+ '\n'
-                + 'Your password is: ' + password.value + '\n'
-                + 'Success: ' + data.success
-                );
+        if(repeatPassword.value === password.value){
 
-                localStorage.setItem('name', firstName.value);
-                localStorage.setItem('last name', lastName.value);
-                localStorage.setItem('dni', dni.value);
-                localStorage.setItem('date', date.value);
-                localStorage.setItem('phone', phone.value);
-                localStorage.setItem('address', address.value);
-                localStorage.setItem('location', location.value);
-                localStorage.setItem('zip', postalCode.value);
-                localStorage.setItem('email', email.value);
-                localStorage.setItem('password', password.value);
-                localStorage.setItem('repeat-password', repeatPassword.value);
-            }
-            else {
-                return data;
-            }
-        })
-        .then(function(err) {
-            return err.errors;
-        })
-        .then(function(err) {
-            var errors =[];
-            for(var i = 0 ; i < err.length; i++) {
-                errors += '\n' + err[i].msg;
-            }
-            throw new Error (errors);
-        })
-        .catch(function(error) {
-            alert(error);
-        });
+            fetch(signUp)
+            .then(function(pro) {
+                return pro.json();
+            })
+            .then(function(data) {
+                if(data.success) {
+                    var success = [];
+                    for (var key in data.data) {
+                        success += ('\n' + key + ': ' + data.data[key]);
+                    }
+                    var inputField = [];
+                    for (var key in data.data){
+                        inputField += data.data[key] + ',';
+                    }
+                    var values = inputField.split(',');
+                    for(var i = 0; i < values.length - 1; i++) {
+                        localStorage.setItem(inputs[i + 1].name , values[i + 1])
+                    }
+                    convertDate(date)
+                    localStorage.setItem('dob', date.value = convertedDate)
+                    alert ('Success: ' + data.success +'\n' + data.msg + success);
+                }
+                else {
+                    var fetchErrors = data.errors;
+                    var errors =[];
+                    for(var i = 0 ; i < fetchErrors.length; i++) {
+                        errors += '\n' + fetchErrors[i].msg;
+                    }
+                    throw new Error (errors);
+                    };
+                })
+            .catch(function(error) {
+                alert(error);
+            });
+        }
+        else {
+            repeatPassword.classList.add("border-red");
+            var inputError = document.createElement ("p");
+            inputError.classList.add("input-" + repeatPassword.name);
+            inputError.innerText = 'Passwords don`t match';
+            repeatPassword.parentNode.insertBefore(inputError, repeatPassword.nextSibling);
+        };
+    };
+    for(var i = 0; i < inputs.length -1; i++){
+        inputs[i + 1].value = localStorage.getItem(inputs[i + 1].name);
     };
 };

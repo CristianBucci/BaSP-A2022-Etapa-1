@@ -119,7 +119,6 @@ window.onload = function() {
                 return pro.json();
             })
             .then(function(data){
-                console.log(data);
                 if (!data.success){
                     throw new Error (data.msg + '\n' + 'Success: ' + data.success);
                 }
