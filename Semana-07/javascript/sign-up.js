@@ -14,6 +14,10 @@ window.onload = function() {
     var repeatPassword = document.getElementById("repeat-password");
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
     var inputs = document.getElementsByTagName("input")
+    var modal = document.getElementById("background");
+    var modalTitle = document.getElementById("modal-title");
+    var modalButton = document.getElementById("modal-button");
+    var closeModal = document.getElementsByClassName("close")[0];
     var letterValidation;
     var numberValidation;
     var letterSpaceNumberValidation;
@@ -23,13 +27,13 @@ window.onload = function() {
         var year = input.value.substring(0 , input.value.indexOf('-'));
         var month = input.value.substring(input.value.indexOf('-') + 1, input.value.indexOf('-') + 3);
         var day = input.value.substring(input.value.indexOf('-')+ 4 , input.value.indexOf('-') + input.value.length);
-        var dateArr = [ year, month , day];
+        var dateArr = [year, month , day];
         convertedDate = dateArr.join('-');
-    }
+    };
 
     var onespace = function (input) {
         var arrayCharacters = input.split('');
-        for(var i=0; i < arrayCharacters.length; i++) {
+        for (var i=0; i < arrayCharacters.length; i++) {
             if (arrayCharacters[i] == " ") {
                 if (arrayCharacters[0] == " ") {
                     return false;
@@ -40,14 +44,14 @@ window.onload = function() {
                 if (arrayCharacters[arrayCharacters.length - 1] == " ") {
                     return false;
                 };
-            }
+            };
         };
         return true;
     };
 
     var onlyOneSpace = function (input) {
         var arrayCharacters = input.split('');
-        for(var i=0; i < arrayCharacters.length; i++) {
+        for (var i=0; i < arrayCharacters.length; i++) {
             if (arrayCharacters[i] == " ") {
                 if (arrayCharacters[0] == " ") {
                     return false;
@@ -61,14 +65,14 @@ window.onload = function() {
             }
             else if (!arrayCharacters.includes(' ')){
                 return false
-            }
+            };
         };
         return true;
     };
 
     var validateLetters = function(input) {
         var inputValue = input.value.toLowerCase();
-        for(var i = 0; i < inputValue.length; i++) {
+        for (var i = 0; i < inputValue.length; i++) {
             if (inputValue.charCodeAt(i) >= 97 && inputValue.charCodeAt(i) <= 122) {
                 letterValidation = true;
             }
@@ -81,7 +85,7 @@ window.onload = function() {
 
     var validateNumber = function(input) {
         var inputValue = input.value;
-        for(var i = 0; i < inputValue.length; i++) {
+        for (var i = 0; i < inputValue.length; i++) {
             if (inputValue.charCodeAt(i) >= 48 && inputValue.charCodeAt(i) <= 57) {
                 numberValidation = true;
             }
@@ -94,7 +98,7 @@ window.onload = function() {
 
     var validateLetterSpaceNumber = function(input) {
         var inputValue = (input.value.toLowerCase());
-        for(var i = 0; i < inputValue.length; i++) {
+        for (var i = 0; i < inputValue.length; i++) {
             if (inputValue.charCodeAt(i) >= 97 && inputValue.charCodeAt(i) <= 122) {
                 letterSpaceNumberValidation = true;
             }
@@ -135,7 +139,7 @@ window.onload = function() {
     };
 
     var removeBorder = function(input){
-        if (input.classList.contains("border-red")){
+        if (input.classList.contains("border-red")) {
             input.value = '';
             input.classList.remove("border-red");
             if (document.querySelector(".input-" + input.name)) {
@@ -271,10 +275,11 @@ window.onload = function() {
 
 
     email.onblur = function() {
-        if (!requiredField(email)){
+        if (!requiredField(email)) {
             if (!email.value.match(emailExpression)) {
                 addRedBorder(email);
-            }else {
+            }
+            else {
             addGreenBorder(email);
             };
         };
@@ -288,7 +293,7 @@ window.onload = function() {
         validateLetters(password);
         validateNumber(password);
         if (!requiredField(password)) {
-            if (!letterValidation && !numberValidation && password.value.length < 8) {
+            if (letterValidation || numberValidation || password.value.length < 8) {
                 addRedBorder(password);
             }
             else {
@@ -305,7 +310,8 @@ window.onload = function() {
         if (!requiredField(repeatPassword)){
             if (repeatPassword.value !== password.value) {
             addRedBorder(repeatPassword);
-            }else {
+            }
+            else {
                 addGreenBorder(repeatPassword);
             };
         };
@@ -315,7 +321,7 @@ window.onload = function() {
         removeBorder(repeatPassword);
     };
 
-    button.onclick = function(e){
+    button.onclick = function(e) {
         e.preventDefault();
 
         var year = date.value.substring(0 , date.value.indexOf('-'));
@@ -338,41 +344,62 @@ window.onload = function() {
         +"&email="+email.value
         +"&password="+password.value;
 
-        if(repeatPassword.value === password.value){
-
+        if (repeatPassword.value === password.value) {
             fetch(signUp)
             .then(function(pro) {
                 return pro.json();
             })
             .then(function(data) {
-                if(data.success) {
+                if (data.success) {
                     var success = [];
-                    for (var key in data.data) {
-                        success += ('\n' + key + ': ' + data.data[key]);
-                    }
                     var inputField = [];
-                    for (var key in data.data){
+                    for (var key in data.data) {
+                        success += ('\n' + '-' + key + ': ' + data.data[key] + '\n');
                         inputField += data.data[key] + ',';
-                    }
+                    };
+
                     var values = inputField.split(',');
-                    for(var i = 0; i < values.length - 1; i++) {
+                    for (var i = 0; i < values.length - 1; i++) {
                         localStorage.setItem(inputs[i + 1].name , values[i + 1])
-                    }
-                    convertDate(date)
-                    localStorage.setItem('dob', date.value = convertedDate)
-                    alert ('Success: ' + data.success +'\n' + data.msg + success);
+                    };
+
+                    convertDate(date);
+                    localStorage.setItem('dob', date.value = convertedDate);
+                    localStorage.setItem('Repeat-Password', repeatPassword.value);
+
+                    modal.style.display = "flex";
+                    modalTitle.innerText = "Succesfully Registration";
+                    var pSuccess = document.createElement("p");
+                    pSuccess.innerText ='Success: ' + data.success +'\n' + data.msg + '\n' + success;
+                    modalButton.parentNode.insertBefore(pSuccess, modalButton.nextSibling);
+
+                    closeModal.onclick = function() {
+                        modal.style.display = "none";
+                        pSuccess.innerText = '';
+                    };0
                 }
                 else {
                     var fetchErrors = data.errors;
-                    var errors =[];
-                    for(var i = 0 ; i < fetchErrors.length; i++) {
-                        errors += '\n' + fetchErrors[i].msg;
+                    var errors= [];
+                    for (var i = 0 ; i < fetchErrors.length; i++) {
+                        errors += '\n' + '-' +fetchErrors[i].msg;
                     }
                     throw new Error (errors);
                     };
                 })
             .catch(function(error) {
-                alert(error);
+                modal.style.display = "flex";
+                modalTitle.innerText = "ERROR!!"
+                modalTitle.style.color = ("red")
+                var pError = document.createElement("p");
+                pError.style.color = ("red")
+                pError.innerText = error;
+                modalButton.parentNode.insertBefore(pError, modalButton.nextSibling);
+
+                closeModal.onclick = function() {
+                    modal.style.display = "none";
+                    pError.innerText = '';
+                };
             });
         }
         else {
@@ -383,7 +410,8 @@ window.onload = function() {
             repeatPassword.parentNode.insertBefore(inputError, repeatPassword.nextSibling);
         };
     };
-    for(var i = 0; i < inputs.length -1; i++){
+
+    for (var i = 0; i < inputs.length -1; i++) {
         inputs[i + 1].value = localStorage.getItem(inputs[i + 1].name);
     };
 };

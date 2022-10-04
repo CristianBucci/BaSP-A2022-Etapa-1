@@ -9,7 +9,7 @@ main article {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 400px;
+    height: 450px;
     width: 250px;
     padding-top: 50px;
     border-radius: 10px;
@@ -70,6 +70,61 @@ form a {
     font-weight: bold;
     text-align: right;
     color: #46a07b;
+}
+
+.background-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 150vw;
+    height: 150vh;
+    top: 0;
+    background-color:rgba(0, 0, 0, 0.5);
+}
+
+.modal-container {
+    position: fixed;
+    overflow: hidden;
+    top: 300px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    height: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: #373867;
+}
+
+.modal-content {
+    width: 400px;
+    height: auto;
+    margin: auto;
+    padding: 20px;
+    background-color:  #d1d1d1;
+}
+
+.modal-header h2 {
+    font-size: 21px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.modal-content p {
+    font-size: 18px;
+    font-weight: 600;
+    color: #46a07b;
+}
+
+.close {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    color: #46a07b;
+    background-color: #373867;
 }
 
 .border-green {

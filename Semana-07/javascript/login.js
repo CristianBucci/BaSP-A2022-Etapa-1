@@ -3,6 +3,10 @@ window.onload = function() {
     var formInputEmail = document.getElementById("form-input-email");
     var formInputPassword = document.getElementById("form-input-password");
     var buttonLogin = document.getElementById("login-button");
+    var modal = document.getElementById("background");
+    var modalTitle = document.getElementById("modal-title");
+    var modalButton = document.getElementById("modal-button");
+    var closeModal = document.getElementsByClassName("close")[0];
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
     var inputValidation;
 
@@ -83,30 +87,8 @@ window.onload = function() {
     buttonLogin.onclick = function (e) {
         e.preventDefault();
 
-        var invalidEmail = 'Invalid email:';
-        var invalidPassword = 'invalid password:';
         var validEmail = 'Email:';
         var validPassword = 'Password:';
-
-        if (formInputEmail.classList.contains("border-red") && formInputPassword.classList.contains("border-red")) {
-            invalidEmail += formInputEmail.value;
-            invalidPassword += formInputPassword.value;
-            alert(invalidEmail + '\n' + invalidPassword);
-        }
-        else if (formInputEmail.classList.contains("border-red")) {
-            invalidEmail += formInputEmail.value;
-            alert(invalidEmail);
-        }
-        else if (formInputPassword.classList.contains("border-red")) {
-            invalidPassword += formInputPassword.value;
-            alert(invalidPassword);
-        }
-        else if (formInputEmail.value == '' || formInputPassword.value == '') {
-            formInputEmail.classList.add("border-red");
-            formInputPassword.classList.add("border-red");
-            alert('Required fields');
-        }
-        else {
 
             validEmail += formInputEmail.value;
             validPassword += formInputPassword.value;
@@ -115,21 +97,50 @@ window.onload = function() {
             '&password=' + formInputPassword.value;
 
             fetch(login)
-            .then(function(pro){
+            .then(function(pro) {
                 return pro.json();
             })
-            .then(function(data){
-                if (!data.success){
-                    throw new Error (data.msg + '\n' + 'Success: ' + data.success);
+            .then(function(data) {
+                if(!data.success && formInputEmail.classList.contains("border-green") &&
+                formInputPassword.classList.contains("border-green")){
+                    throw new Error (data.msg)
+                }
+                else if (!data.success) {
+                    var fetchErrors = data.errors;
+                    var errors =[];
+                    for(var i = 0 ; i < fetchErrors.length; i++) {
+                        errors += '\n' + fetchErrors[i].msg;
+                    }
+                    throw new Error (errors);
                 }
                 else {
-                alert('\n' + 'Succes ' + data.success + '\n' + validEmail + '\n' + validPassword + '\n' +
-                'Request: ' + data.msg);
-                }
+
+                    modal.style.display = "flex";
+                    modalTitle.innerText = "Succesfully Registration";
+                    var pSuccess = document.createElement("p");
+                    pSuccess.innerText = 'Succes ' + data.success + '\n' + validEmail + '\n' + validPassword + '\n' +
+                    data.msg;
+                    modalButton.parentNode.insertBefore(pSuccess, modalButton.nextSibling);
+
+                    closeModal.onclick = function() {
+                        modal.style.display = "none";
+                        pSuccess.remove();
+                    };
+                };
             })
-            .catch(function(error){
-                alert(error);
-            })
+            .catch(function(error) {
+                modal.style.display = "flex";
+
+                modalTitle.innerText = "ERROR";
+                var pError = document.createElement("p");
+                pError.style.color = ("red")
+                pError.innerText = error;
+                modalButton.parentNode.insertBefore(pError, modalButton.nextSibling);
+
+                closeModal.onclick = function() {
+                    modal.style.display = "none";
+                    pError.remove();
+                };
+            });
         };
     };
-};
