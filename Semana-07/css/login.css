@@ -87,6 +87,8 @@ form a {
     position: fixed;
     overflow: hidden;
     top: 300px;
+    width: 80%;
+    max-width: 400px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -100,7 +102,8 @@ form a {
 }
 
 .modal-content {
-    width: 400px;
+    width: 90%;
+    max-width: 400px;
     height: auto;
     margin: auto;
     padding: 20px;

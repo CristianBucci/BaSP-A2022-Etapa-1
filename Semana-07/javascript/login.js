@@ -8,7 +8,46 @@ window.onload = function() {
     var modalButton = document.getElementById("modal-button");
     var closeModal = document.getElementsByClassName("close")[0];
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-    var inputValidation;
+    var letterValidation;
+    var numberValidation;
+
+    var validateLetters = function(input) {
+        var inputValue = input.value.toLowerCase();
+        for (var i = 0; i < inputValue.length; i++) {
+            if (inputValue.charCodeAt(i) >= 97 && inputValue.charCodeAt(i) <= 122) {
+                letterValidation = true;
+            }
+            else {
+                letterValidation = false;
+                break;
+            };
+        };
+    };
+
+    var validateNumber = function(input) {
+        var inputValue = input.value;
+        for (var i = 0; i < inputValue.length; i++) {
+            if (inputValue.charCodeAt(i) >= 48 && inputValue.charCodeAt(i) <= 57) {
+                numberValidation = true;
+            }
+            else {
+                numberValidation = false;
+                break;
+            };
+        };
+    };
+
+    var letterNumber = function(input) {
+        for (var i = 0; i < input.length; i++) {
+            if ((input.charCodeAt(i) >= 97 && input.charCodeAt(i) <= 122) || (input.charCodeAt(i) >= 65 &&
+            input.charCodeAt(i) <= 90) || (input.charCodeAt(i) >= 48 && input.charCodeAt(i) <= 57)) {
+            }
+            else {
+                return false;
+            };
+        };
+        return true;
+    };
 
     var borderRedRequired = function(input) {
         var inputError = document.createElement("p");
@@ -55,27 +94,20 @@ window.onload = function() {
     };
 
     formInputPassword.onblur = function() {
-        var inputValue = (formInputPassword.value).toLowerCase();
-        for (var i = 0; i < inputValue.length;i++) {
-            if (inputValue.charCodeAt(i) >= 97 && inputValue.charCodeAt(i) <= 122) {
-                inputValidation = true;
-            }
-            else if (inputValue.charCodeAt(i) >= 48 && inputValue.charCodeAt(i) <= 57) {
-                inputValidation = true;
-            }
-            else {
-                inputValidation = false;
-                break
-            };
-        };
+        validateLetters(formInputPassword);
+        validateNumber(formInputPassword);
+
         if (formInputPassword.value === '') {
             borderRedRequired(formInputPassword);
         }
-        else if (!inputValidation || formInputPassword.value === "" || formInputPassword.value.length < 8) {
+        else if (letterValidation || numberValidation || formInputPassword.value.length < 8) {
             borderRed(formInputPassword);
         }
+        else if(letterNumber(formInputPassword.value)){
+            borderGreen(formInputPassword)
+        }
         else {
-            borderGreen(formInputPassword);
+            borderRed(formInputPassword);
         };
     };
 
@@ -90,57 +122,54 @@ window.onload = function() {
         var validEmail = 'Email:';
         var validPassword = 'Password:';
 
-            validEmail += formInputEmail.value;
-            validPassword += formInputPassword.value;
+        validEmail += formInputEmail.value;
+        validPassword += formInputPassword.value;
 
-            var login = 'https://basp-m2022-api-rest-server.herokuapp.com/login?email='+ formInputEmail.value +
-            '&password=' + formInputPassword.value;
+        var login = 'https://basp-m2022-api-rest-server.herokuapp.com/login?email='+ formInputEmail.value +
+        '&password=' + formInputPassword.value;
 
-            fetch(login)
-            .then(function(pro) {
-                return pro.json();
-            })
-            .then(function(data) {
-                if(!data.success && formInputEmail.classList.contains("border-green") &&
-                formInputPassword.classList.contains("border-green")){
-                    throw new Error (data.msg)
+        fetch(login)
+        .then(function(pro) {
+            return pro.json();
+        })
+        .then(function(data) {
+            if(!data.success && formInputEmail.classList.contains("border-green") &&
+            formInputPassword.classList.contains("border-green")){
+                throw new Error (data.msg)
+            }
+            else if (!data.success) {
+                var fetchErrors = data.errors;
+                var errors =[];
+                for(var i = 0 ; i < fetchErrors.length; i++) {
+                    errors += '\n' + fetchErrors[i].msg;
                 }
-                else if (!data.success) {
-                    var fetchErrors = data.errors;
-                    var errors =[];
-                    for(var i = 0 ; i < fetchErrors.length; i++) {
-                        errors += '\n' + fetchErrors[i].msg;
-                    }
-                    throw new Error (errors);
-                }
-                else {
-
-                    modal.style.display = "flex";
-                    modalTitle.innerText = "Succesfully Registration";
-                    var pSuccess = document.createElement("p");
-                    pSuccess.innerText = 'Succes ' + data.success + '\n' + validEmail + '\n' + validPassword + '\n' +
-                    data.msg;
-                    modalButton.parentNode.insertBefore(pSuccess, modalButton.nextSibling);
-
-                    closeModal.onclick = function() {
-                        modal.style.display = "none";
-                        pSuccess.remove();
-                    };
-                };
-            })
-            .catch(function(error) {
+                throw new Error (errors);
+            }
+            else {
                 modal.style.display = "flex";
-
-                modalTitle.innerText = "ERROR";
-                var pError = document.createElement("p");
-                pError.style.color = ("red")
-                pError.innerText = error;
-                modalButton.parentNode.insertBefore(pError, modalButton.nextSibling);
-
+                modalTitle.innerText = "Succesfully Registration";
+                var pSuccess = document.createElement("p");
+                pSuccess.innerText = 'Succes ' + data.success + '\n' + validEmail + '\n' + validPassword + '\n' +
+                data.msg;
+                modalButton.parentNode.insertBefore(pSuccess, modalButton.nextSibling);
                 closeModal.onclick = function() {
                     modal.style.display = "none";
-                    pError.remove();
+                    pSuccess.remove();
                 };
-            });
-        };
+            };
+        })
+        .catch(function(error) {
+            modal.style.display = "flex";
+            modalTitle.innerText = "ERROR";
+            var pError = document.createElement("p");
+            pError.style.color = ("red")
+            pError.innerText = error;
+            modalButton.parentNode.insertBefore(pError, modalButton.nextSibling);
+
+            closeModal.onclick = function() {
+                modal.style.display = "none";
+                pError.remove();
+            };
+        });
     };
+};

@@ -96,6 +96,18 @@ window.onload = function() {
         };
     };
 
+    var letterNumber = function(input) {
+        for (var i = 0; i < input.length; i++) {
+            if ((input.charCodeAt(i) >= 97 && input.charCodeAt(i) <= 122) || (input.charCodeAt(i) >= 65 &&
+            input.charCodeAt(i) <= 90) || (input.charCodeAt(i) >= 48 && input.charCodeAt(i) <= 57)) {
+            }
+            else {
+                return false;
+            };
+        };
+        return true;
+    };
+
     var validateLetterSpaceNumber = function(input) {
         var inputValue = (input.value.toLowerCase());
         for (var i = 0; i < inputValue.length; i++) {
@@ -197,13 +209,22 @@ window.onload = function() {
     };
 
     date.onblur = function() {
-        if (requiredField(date)) {
-        }else {
+        var dateYear = date.value;
+        var actualDate = new Date();
+        var actualYear= actualDate.getFullYear();
+        if (!requiredField(date)) {
+            dateYear = dateYear.substring(0, 4);
+            if(dateYear < 1920  || dateYear >= actualYear){
+                addRedBorder(date);
+            }
+            else {
             addGreenBorder(date);
+            };
         };
     };
 
     date.onfocus = function() {
+        date.value.slice()
         removeBorder(date);
         };
 
@@ -273,7 +294,6 @@ window.onload = function() {
         removeBorder(postalCode);
     };
 
-
     email.onblur = function() {
         if (!requiredField(email)) {
             if (!email.value.match(emailExpression)) {
@@ -296,8 +316,11 @@ window.onload = function() {
             if (letterValidation || numberValidation || password.value.length < 8) {
                 addRedBorder(password);
             }
+            else if (letterNumber(password.value)){
+                addGreenBorder(password)
+            }
             else {
-                addGreenBorder(password);
+                addRedBorder(password);
             };
         };
     };
@@ -354,7 +377,7 @@ window.onload = function() {
                     var success = [];
                     var inputField = [];
                     for (var key in data.data) {
-                        success += ('\n' + '-' + key + ': ' + data.data[key] + '\n');
+                        success += ('-' + key + ': ' + data.data[key] + '\n');
                         inputField += data.data[key] + ',';
                     };
 
@@ -382,7 +405,7 @@ window.onload = function() {
                     var fetchErrors = data.errors;
                     var errors= [];
                     for (var i = 0 ; i < fetchErrors.length; i++) {
-                        errors += '\n' + '-' +fetchErrors[i].msg;
+                        errors += '-' +fetchErrors[i].msg;
                     }
                     throw new Error (errors);
                     };
